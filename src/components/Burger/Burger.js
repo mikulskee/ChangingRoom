@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { TweenMax } from "gsap/TweenMax";
 
 const Button = styled.button`
   background: none;
   border: none;
-  padding: 10px 16px;
+  padding: 15px 16px;
   div {
     position: relative;
     width: 16px;
@@ -28,8 +29,14 @@ const Button = styled.button`
 `;
 
 const Burger = () => {
+  const handleBurger = () => {
+    const menu = document.querySelector(".menu");
+    TweenMax.set(menu, { css: { display: "flex" } });
+    TweenMax.to(menu, 0.25, { css: { transform: "translatex(0)" } });
+  };
+
   return (
-    <Button>
+    <Button onClick={handleBurger}>
       <div />
     </Button>
   );

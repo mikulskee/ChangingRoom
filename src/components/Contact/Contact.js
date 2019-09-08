@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.section`
-  width: 100vw;
+  width: 100%;
   position: relative;
   background-image: url(${contactImage});
   background-size: cover;
@@ -89,7 +89,6 @@ const ContactInfo = styled.div`
 
 class Contact extends Component {
   componentDidMount() {
-    console.log("did mount");
     const googleMaps = document.querySelector(".google-maps");
     googleMaps.innerHTML = `<iframe
 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1275.2754886031819!2d19.02384940833367!3d50.26297010950529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce374adf3de5%3A0x9605925989d723b!2sKatowice!5e0!3m2!1spl!2spl!4v1567885387489!5m2!1spl!2spl"
@@ -99,7 +98,6 @@ allowfullscreen=""
 ></iframe>`;
   }
   render() {
-    console.log("render");
     return (
       <Container>
         <div className="wrapper">

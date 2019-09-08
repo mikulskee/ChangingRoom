@@ -10,7 +10,7 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const Container = styled.footer`
   padding: 20px 0 5px;
-  width: 100vw;
+  width: 100%;
   background-color: #000;
   img {
     display: block;

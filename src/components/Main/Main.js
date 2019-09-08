@@ -11,10 +11,10 @@ import tshirts from "../../images/t-shirts.jpg";
 
 const Container = styled.main`
   background-color: white;
-  width: 100vw;
+  width: 100%;
 
   .product {
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     img {

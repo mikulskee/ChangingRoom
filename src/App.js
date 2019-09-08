@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigation } from "./components/Navigation/Navigation";
 import Burger from "./components/Burger/Burger";
+import Menu from "./components/Menu/Menu";
 import Icons from "./components/Icons/Icons";
 import Logo from "./components/Logo/Logo";
 import Header from "./components/Header/Header";
@@ -13,11 +14,13 @@ class App extends Component {
   render() {
     return (
       <>
+        <Menu />
         <Navigation>
           <Burger />
           <Logo />
           <Icons />
         </Navigation>
+
         <Header />
         <Main />
         <Contact />

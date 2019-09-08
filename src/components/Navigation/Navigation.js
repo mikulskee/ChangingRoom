@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Navigation = styled.nav`
-  width: 100vw;
-  height: 12vw;
+  width: 100%;
+  padding: 10px;
   display: flex;
   position: fixed;
   align-items: center;
