@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1061d542acbcbb4f0864b27a375d3b4d",
+    "revision": "bea424676b0c844e78c3c40e1118f28d",
     "url": "/ChangingRoom/index.html"
   },
   {
-    "revision": "fe1296cf5d8af29409a7",
+    "revision": "dba6ea348f30f227f413",
     "url": "/ChangingRoom/static/css/main.b8fe2e41.chunk.css"
   },
   {
-    "revision": "e1bfc9905262081566bb",
-    "url": "/ChangingRoom/static/js/2.fbc5f62b.chunk.js"
+    "revision": "5ae944a16fbdda39f080",
+    "url": "/ChangingRoom/static/js/2.3b87fc30.chunk.js"
   },
   {
-    "revision": "fe1296cf5d8af29409a7",
-    "url": "/ChangingRoom/static/js/main.0cbf69bc.chunk.js"
+    "revision": "dba6ea348f30f227f413",
+    "url": "/ChangingRoom/static/js/main.1005992c.chunk.js"
   },
   {
     "revision": "3ac7c76fbe6c078deac8",
@@ -30,6 +30,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f371b59c8f08553511930f740ea168f8",
     "url": "/ChangingRoom/static/media/header1.f371b59c.jpg"
+  },
+  {
+    "revision": "208ee3ee5c778559d11596be8a55dbd1",
+    "url": "/ChangingRoom/static/media/header2.208ee3ee.jpg"
+  },
+  {
+    "revision": "1f7db93f2664917c4019b0f533626a20",
+    "url": "/ChangingRoom/static/media/header3.1f7db93f.jpg"
   },
   {
     "revision": "5d125a1957322d87673dba4a7fde3329",
