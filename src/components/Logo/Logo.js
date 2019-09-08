@@ -3,7 +3,10 @@ import styled from "styled-components";
 import logo from "../../images/logo.png";
 
 const Container = styled.div`
-  height: 25px;
+  height: 8vw;
+  @media only screen and (orientation: landscape) {
+    height: 5vw;
+  }
   img {
     display: block;
     height: 100%;

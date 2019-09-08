@@ -1,24 +1,12 @@
 import React, { Component } from "react";
+import { Navigation } from "./components/Navigation/Navigation";
 import Burger from "./components/Burger/Burger";
 import Icons from "./components/Icons/Icons";
 import Logo from "./components/Logo/Logo";
 import Header from "./components/Header/Header";
-import styled from "styled-components";
-
-const Navigation = styled.nav`
-  width: 100vw;
-  height: 12vw;
-  display: flex;
-  position: relative;
-  align-items: center;
-  box-shadow: 0px 15px 16px -12px rgba(0, 0, 0, 0.75);
-  justify-content: space-between;
-  z-index: 2;
-  background-color: #fff;
-  @media only screen and (orientation: landscape) {
-    height: 8vw;
-  }
-`;
+import Main from "./components/Main/Main";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   state = {};
@@ -31,6 +19,9 @@ class App extends Component {
           <Icons />
         </Navigation>
         <Header />
+        <Main />
+        <Contact />
+        <Footer />
       </>
     );
   }

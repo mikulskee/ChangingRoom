@@ -4,8 +4,10 @@ import header1 from "../../images/header1.jpg";
 
 const Container = styled.header`
   position: relative;
+  width: 100vw;
+  padding-top: 12vw;
   @media only screen and (orientation: landscape) {
-    top: -10vw;
+    padding-top: 8vw;
   }
   ::after {
     content: "";
@@ -25,7 +27,7 @@ const Container = styled.header`
   }
   img {
     display: block;
-    width: 100vw;
+    width: 100%;
   }
 
   h1 {
