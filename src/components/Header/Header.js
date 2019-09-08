@@ -1,18 +1,37 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
+import { TimelineMax } from "gsap/TimelineMax";
 import header1 from "../../images/header1.jpg";
+import header2 from "../../images/header2.jpg";
+import header3 from "../../images/header3.jpg";
 
 const Container = styled.header`
   position: relative;
+  overflow: hidden;
   width: 100vw;
   padding-top: 12vw;
   @media only screen and (orientation: landscape) {
     padding-top: 8vw;
   }
-  ::after {
+`;
+
+const Template = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+
+  &.template--office,
+  &.template--motto {
+    position: absolute;
+    top: 12vw;
+    transform: translateX(100%);
+  }
+
+  ::before {
     content: "";
     display: block;
     position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
     top: 0;
@@ -26,6 +45,7 @@ const Container = styled.header`
     opacity: 0.45;
   }
   img {
+    position: relative;
     display: block;
     width: 100%;
   }
@@ -34,10 +54,10 @@ const Container = styled.header`
     color: white;
     text-align: center;
     position: absolute;
+    z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
     font-weight: 300;
     font-size: 28px;
     line-height: 1.1;
@@ -50,16 +70,82 @@ const Container = styled.header`
   }
 `;
 
-const Header = () => {
-  return (
-    <Container>
-      <img src={header1} alt="" />
-      <h1>
-        jesień 2019 <br />
-        <span>casual</span>
-      </h1>
-    </Container>
-  );
-};
+const headers = [
+  { id: "casual", title: "jesień 2019", span: "casual", image: header1 },
+  { id: "office", title: "jesień 2019", span: "office", image: header2 },
+  {
+    id: "motto",
+    title: "find your own style",
+    span: "",
+    image: header3
+  }
+];
+
+class Header extends Component {
+  componentDidMount() {
+    const casual = document.querySelector(".template--casual");
+    const office = document.querySelector(".template--office");
+    const motto = document.querySelector(".template--motto");
+
+    const tlHeader = new TimelineMax();
+
+    tlHeader
+      .to(casual, 1, {
+        css: { transform: "translateX(-100%)" },
+        delay: 5
+      })
+      .set(casual, { css: { transform: "translateX(100%)" } })
+      .to(
+        office,
+        1,
+        {
+          css: { transform: "translateX(0)" }
+        },
+        "-=1"
+      )
+      .to(office, 1, {
+        css: { transform: "translateX(-100%)" },
+        delay: 5
+      })
+      .to(
+        motto,
+        1,
+        {
+          css: { transform: "translateX(0)" }
+        },
+        "-=1"
+      )
+
+      .to(motto, 1, {
+        css: { transform: "translateX(-100%)" },
+        delay: 5
+      })
+      .to(
+        casual,
+        1,
+        {
+          css: { transform: "translateX(0)" }
+        },
+        "-=1"
+      )
+      .set(office, { css: { transform: "translateX(100%)" } })
+      .set(motto, { css: { transform: "translateX(100%)" } });
+
+    tlHeader.repeat(-1);
+  }
+  render() {
+    const headersLayouts = headers.map(header => (
+      <Template className={`template--${header.id}`}>
+        <img className={header.id} src={header.image} alt="" />
+        <h1>
+          {header.title}
+          <br />
+          <span>{header.span}</span>
+        </h1>
+      </Template>
+    ));
+    return <Container>{headersLayouts}</Container>;
+  }
+}
 
 export default Header;
