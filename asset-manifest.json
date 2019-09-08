@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ChangingRoom/static/css/main.b8fe2e41.chunk.css",
+    "main.js": "/ChangingRoom/static/js/main.1b30737e.chunk.js",
+    "main.js.map": "/ChangingRoom/static/js/main.1b30737e.chunk.js.map",
+    "runtime~main.js": "/ChangingRoom/static/js/runtime~main.821f2008.js",
+    "runtime~main.js.map": "/ChangingRoom/static/js/runtime~main.821f2008.js.map",
+    "static/js/2.2588c173.chunk.js": "/ChangingRoom/static/js/2.2588c173.chunk.js",
+    "static/js/2.2588c173.chunk.js.map": "/ChangingRoom/static/js/2.2588c173.chunk.js.map",
+    "index.html": "/ChangingRoom/index.html",
+    "precache-manifest.aa28d801a35fd400e1d8df02da6704ca.js": "/ChangingRoom/precache-manifest.aa28d801a35fd400e1d8df02da6704ca.js",
+    "service-worker.js": "/ChangingRoom/service-worker.js",
+    "static/css/main.b8fe2e41.chunk.css.map": "/ChangingRoom/static/css/main.b8fe2e41.chunk.css.map",
+    "static/media/additives.jpg": "/ChangingRoom/static/media/additives.47a0ef57.jpg",
+    "static/media/contact-image.jpg": "/ChangingRoom/static/media/contact-image.5b1413a8.jpg",
+    "static/media/header1.jpg": "/ChangingRoom/static/media/header1.f371b59c.jpg",
+    "static/media/hoodies.jpg": "/ChangingRoom/static/media/hoodies.5d125a19.jpg",
+    "static/media/jackets.jpg": "/ChangingRoom/static/media/jackets.66a5790b.jpg",
+    "static/media/logo-white.png": "/ChangingRoom/static/media/logo-white.57ac7174.png",
+    "static/media/logo.png": "/ChangingRoom/static/media/logo.cd39ab47.png",
+    "static/media/pants.jpg": "/ChangingRoom/static/media/pants.e1fb52c9.jpg",
+    "static/media/shirts.jpg": "/ChangingRoom/static/media/shirts.c147a7fe.jpg",
+    "static/media/shoes.jpg": "/ChangingRoom/static/media/shoes.66eb781f.jpg",
+    "static/media/skirts.jpg": "/ChangingRoom/static/media/skirts.4430b3ca.jpg",
+    "static/media/t-shirts.jpg": "/ChangingRoom/static/media/t-shirts.9ca15ce8.jpg"
+  }
+}
