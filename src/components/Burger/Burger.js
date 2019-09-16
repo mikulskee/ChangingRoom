@@ -31,6 +31,11 @@ const Button = styled.button`
 const Burger = () => {
   const handleBurger = () => {
     const menu = document.querySelector(".menu");
+    document.body.classList.add("menu-open");
+    if (window.innerWidth > window.innerHeight) {
+      menu.firstChild.classList.add("menu-landscape");
+    }
+
     TweenMax.set(menu, { css: { display: "flex" } });
     TweenMax.to(menu, 0.25, { css: { transform: "translatex(0)" } });
   };

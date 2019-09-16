@@ -19,6 +19,9 @@ const Container = styled.div`
   width: 90%;
   height: 100vh;
   background-color: #fff;
+  &.menu-landscape {
+    overflow-y: auto;
+  }
 `;
 
 const X = styled.div`
@@ -112,6 +115,10 @@ const Menu = () => {
 
   const handleClick = () => {
     const menu = document.querySelector(".menu");
+    document.body.classList.remove("menu-open");
+    if (window.innerWidth > window.innerHeight) {
+      menu.firstChild.classList.remove("menu-landscape");
+    }
     TweenMax.to(menu, 0.25, { css: { transform: "translatex(-100%)" } });
     TweenMax.set(menu, { css: { display: "none" }, delay: 0.25 });
   };
