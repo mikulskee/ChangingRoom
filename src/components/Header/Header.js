@@ -8,7 +8,7 @@ import header3 from "../../images/header3.jpg";
 const Container = styled.header`
   position: relative;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   padding-top: 12vw;
   @media only screen and (orientation: landscape) {
     padding-top: 8vw;
@@ -19,14 +19,21 @@ const Template = styled.div`
   position: relative;
   top: 0;
   left: 0;
+  will-change: transform;
 
   &.template--office,
   &.template--motto {
     position: absolute;
     top: 12vw;
-    transform: translateX(100%);
+    @media only screen and (orientation: landscape) {
+      top: 8vw;
+    }
   }
-
+  &.template--motto {
+    h1 {
+      width: 100%;
+    }
+  }
   ::before {
     content: "";
     display: block;
@@ -90,46 +97,17 @@ class Header extends Component {
     const tlHeader = new TimelineMax();
 
     tlHeader
-      .to(casual, 1, {
-        css: { transform: "translateX(-100%)" },
-        delay: 5
-      })
-      .set(casual, { css: { transform: "translateX(100%)" } })
-      .to(
-        office,
-        1,
-        {
-          css: { transform: "translateX(0)" }
-        },
-        "-=1"
-      )
-      .to(office, 1, {
-        css: { transform: "translateX(-100%)" },
-        delay: 5
-      })
-      .to(
-        motto,
-        1,
-        {
-          css: { transform: "translateX(0)" }
-        },
-        "-=1"
-      )
-
-      .to(motto, 1, {
-        css: { transform: "translateX(-100%)" },
-        delay: 5
-      })
-      .to(
-        casual,
-        1,
-        {
-          css: { transform: "translateX(0)" }
-        },
-        "-=1"
-      )
-      .set(office, { css: { transform: "translateX(100%)" } })
-      .set(motto, { css: { transform: "translateX(100%)" } });
+      .set(office, { xPercent: 100 })
+      .set(motto, { xPercent: 100 })
+      .set(casual, { xPercent: 0 })
+      .to(casual, 1, { xPercent: -100, delay: 5 })
+      .to(office, 1, { xPercent: 0, delay: -1 })
+      .to(office, 1, { xPercent: -100, delay: 5 })
+      .to(motto, 1, { xPercent: 0, delay: -1 })
+      .set(casual, { xPercent: 100 })
+      .set(office, { xPercent: 100 })
+      .to(motto, 1, { xPercent: -100, delay: 5 })
+      .to(casual, 1, { xPercent: 0, delay: -1 });
 
     tlHeader.repeat(-1);
   }
