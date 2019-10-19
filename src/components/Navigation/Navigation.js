@@ -10,7 +10,4 @@ export const Navigation = styled.nav`
   justify-content: space-between;
   z-index: 3;
   background-color: #fff;
-  @media only screen and (orientation: landscape) {
-    height: 8vw;
-  }
 `;

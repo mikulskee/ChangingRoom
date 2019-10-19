@@ -9,10 +9,7 @@ const Container = styled.header`
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 12vw;
-  @media only screen and (orientation: landscape) {
-    padding-top: 8vw;
-  }
+  padding-top: 8vw;
 `;
 
 const Template = styled.div`
@@ -20,16 +17,32 @@ const Template = styled.div`
   top: 0;
   left: 0;
   will-change: transform;
-
+  background-image: url(${header1});
+  height: 64vw;
+  background-position: center;
+  background-size: cover;
+  @media only screen and (orientation: landscape) {
+    height: 45vw;
+  }
+  @media only screen and (min-width: 1024px) {
+    height: 40vw;
+  }
   &.template--office,
   &.template--motto {
     position: absolute;
-    top: 12vw;
+    top: 8vw;
+    height: 64vw;
+    width: 100%;
+    background-image: url(${header2});
     @media only screen and (orientation: landscape) {
-      top: 8vw;
+      height: 45vw;
+    }
+    @media only screen and (min-width: 1024px) {
+      height: 40vw;
     }
   }
   &.template--motto {
+    background-image: url(${header3});
     h1 {
       width: 100%;
     }
@@ -51,12 +64,6 @@ const Template = styled.div`
     );
     opacity: 0.45;
   }
-  img {
-    position: relative;
-    display: block;
-    width: 100%;
-  }
-
   h1 {
     color: white;
     text-align: center;
@@ -69,10 +76,16 @@ const Template = styled.div`
     font-size: 28px;
     line-height: 1.1;
     letter-spacing: 2px;
+    @media only screen and (min-width: 768px) {
+      font-size: 40px;
+    }
     span {
       font-family: "Source Sans Pro", sans-serif;
       font-size: 12px;
       letter-spacing: 8px;
+      @media only screen and (min-width: 768px) {
+        font-size: 16px;
+      }
     }
   }
 `;
@@ -113,8 +126,7 @@ class Header extends Component {
   }
   render() {
     const headersLayouts = headers.map(header => (
-      <Template className={`template--${header.id}`}>
-        <img className={header.id} src={header.image} alt="" />
+      <Template key={header.id} className={`template--${header.id}`}>
         <h1>
           {header.title}
           <br />

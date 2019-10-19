@@ -11,6 +11,9 @@ const Button = styled.button`
     width: 16px;
     height: 2px;
     background-color: black;
+    @media only screen and (min-width: 768px) {
+      width: 20px;
+    }
 
     ::before,
     ::after {
@@ -21,6 +24,9 @@ const Button = styled.button`
       height: 2px;
       background-color: black;
       top: -200%;
+      @media only screen and (min-width: 768px) {
+        width: 20px;
+      }
     }
     ::after {
       top: 200%;

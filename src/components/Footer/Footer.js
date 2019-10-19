@@ -19,6 +19,9 @@ const Container = styled.footer`
     @media only screen and (orientation: landscape) {
       width: 35%;
     }
+    @media only screen and (min-width: 768px) {
+      width: 40%;
+    }
   }
 
   div.socials {
@@ -29,6 +32,9 @@ const Container = styled.footer`
       color: white;
       padding: 10px 15px;
       font-size: 18px;
+      @media only screen and (min-width: 768px) {
+        font-size: 22px;
+      }
     }
   }
 
@@ -38,6 +44,9 @@ const Container = styled.footer`
     font-size: 6px;
     text-align: center;
     letter-spacing: 1px;
+    @media only screen and (min-width: 768px) {
+      font-size: 10px;
+    }
     svg {
       path {
         fill: red;

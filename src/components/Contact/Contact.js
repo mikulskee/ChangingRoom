@@ -40,6 +40,9 @@ const Container = styled.section`
     padding: 40px 0 60px;
     text-align: center;
     margin: 0 auto;
+    @media only screen and (min-width: 768px) {
+      font-size: 32px;
+    }
     ::after {
       content: "";
       display: block;
@@ -72,6 +75,9 @@ const ContactInfo = styled.div`
     color: white;
     text-decoration: none;
     font-size: 16px;
+    @media only screen and (min-width: 768px) {
+      font-size: 22px;
+    }
     ::after {
       content: "";
       display: block;

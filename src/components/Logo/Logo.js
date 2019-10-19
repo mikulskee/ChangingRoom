@@ -7,6 +7,9 @@ const Container = styled.div`
   @media only screen and (orientation: landscape) {
     height: 5vw;
   }
+  @media only screen and (min-width: 768px) {
+    height: 6vw;
+  }
   img {
     display: block;
     height: 100%;

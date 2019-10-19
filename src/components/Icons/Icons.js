@@ -16,6 +16,10 @@ const Wrapper = styled.div`
     background: none;
     border: none;
     padding: 5px 8px;
+    @media only screen and (min-width: 768px) {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
   }
 
   .cart {
