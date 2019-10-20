@@ -11,16 +11,21 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 const Container = styled.footer`
   padding: 20px 0 5px;
   width: 100%;
+
   background-color: #000;
   img {
     display: block;
     width: 60%;
+    max-width: 340px;
     margin: 0 auto;
     @media only screen and (orientation: landscape) {
       width: 35%;
     }
     @media only screen and (min-width: 768px) {
       width: 40%;
+    }
+    @media only screen and (min-width: 1024px) {
+      width: 25%;
     }
   }
 

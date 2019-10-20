@@ -60,6 +60,10 @@ const GoogleMaps = styled.div`
   margin: 0 auto;
   width: 80vw;
   height: 80vw;
+  @media only screen and (min-width: 1024px) {
+    width: 80vw;
+    height: 30vw;
+  }
   iframe {
     width: 100%;
     height: 100%;

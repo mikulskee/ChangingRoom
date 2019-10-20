@@ -6,6 +6,9 @@ const Button = styled.button`
   background: none;
   border: none;
   padding: 15px 16px;
+  @media only screen and (min-width: 1024px) {
+    display: none;
+  }
   div {
     position: relative;
     width: 16px;

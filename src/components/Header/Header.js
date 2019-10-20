@@ -9,7 +9,22 @@ const Container = styled.header`
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 8vw;
+  padding-top: 9vw;
+  @media only screen and (orientation: landscape) {
+    padding-top: 4vw;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-top: 5vw;
+  }
+  @media only screen and (min-width: 1024px) {
+    padding-top: 4vw;
+  }
+  @media only screen and (min-width: 1024px) {
+    padding-top: 4vw;
+  }
+  @media only screen and (min-width: 1400px) {
+    padding-top: 62px;
+  }
 `;
 
 const Template = styled.div`
@@ -19,26 +34,40 @@ const Template = styled.div`
   will-change: transform;
   background-image: url(${header1});
   height: 64vw;
+  max-height: 645px;
   background-position: center;
   background-size: cover;
   @media only screen and (orientation: landscape) {
     height: 45vw;
   }
+
   @media only screen and (min-width: 1024px) {
-    height: 40vw;
+    height: 45vw;
   }
   &.template--office,
   &.template--motto {
     position: absolute;
-    top: 8vw;
+    top: 9vw;
     height: 64vw;
+    max-height: 645px;
     width: 100%;
     background-image: url(${header2});
+
     @media only screen and (orientation: landscape) {
+      top: 4vw;
       height: 45vw;
+      background-position: 0% 30%;
+    }
+    @media only screen and (min-width: 768px) {
+      top: 5vw;
+      background-position: 0% 30%;
     }
     @media only screen and (min-width: 1024px) {
-      height: 40vw;
+      height: 45vw;
+      top: 4vw;
+    }
+    @media only screen and (min-width: 1400px) {
+      top: 62px;
     }
   }
   &.template--motto {

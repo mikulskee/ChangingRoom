@@ -4,11 +4,18 @@ import logo from "../../images/logo.png";
 
 const Container = styled.div`
   height: 8vw;
+  max-height: 54px;
   @media only screen and (orientation: landscape) {
     height: 5vw;
   }
   @media only screen and (min-width: 768px) {
     height: 6vw;
+  }
+  @media only screen and (min-width: 1024px) {
+    height: 4vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   img {
     display: block;
