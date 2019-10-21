@@ -9,12 +9,14 @@ import bags from "../../images/bags.jpg";
 import skirts from "../../images/skirts.jpg";
 import tshirts from "../../images/t-shirts.jpg";
 import Line from "../Line/Line";
+import { Link } from "react-router-dom";
 
 const Container = styled.main`
   background-color: white;
   position: relative;
   width: 100%;
   overflow: hidden;
+  padding: 10px 0;
 
   @media only screen and (min-width: 1024px) {
     width: 900px;
@@ -32,10 +34,14 @@ const Container = styled.main`
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: filter 0.15s linear;
+    text-decoration: none;
+    color: black;
 
-    :hover {
-      filter: blur(2px) grayscale(50%);
+    :hover h1::after {
+      transform: translate(-50%, 5px) scale(1);
+    }
+    :hover img {
+      filter: blur(2px);
     }
 
     @media only screen and (min-width: 1024px) {
@@ -45,14 +51,28 @@ const Container = styled.main`
 
     img {
       width: 50%;
+      transition: filter 0.15s linear;
     }
 
     h1 {
+      position: relative;
       width: 50vw;
       text-align: center;
       font-family: "Source Sans Pro", sans-serif;
       font-size: 12px;
       letter-spacing: 0.5em;
+      ::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        display: block;
+        width: 60%;
+        height: 2px;
+        background-color: black;
+        transition: transform 0.15s linear;
+        transform: translate(-50%, 5px) scale(0);
+      }
       @media only screen and (min-width: 768px) {
         font-size: 16px;
       }
@@ -82,10 +102,14 @@ class Main extends Component {
   state = {};
   render() {
     const products = sections.map(section => (
-      <div key={section.id} className={`product ${section.id}`}>
+      <Link
+        to={section.id}
+        key={section.id}
+        className={`product ${section.id}`}
+      >
         <img alt={section.product} src={section.image} />
         <h1>{section.product}</h1>
-      </div>
+      </Link>
     ));
 
     return (

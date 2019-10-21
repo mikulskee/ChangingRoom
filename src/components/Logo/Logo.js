@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
 
-const Container = styled.div`
+const Container = styled(Link)`
   height: 8vw;
   max-height: 54px;
   @media only screen and (orientation: landscape) {
@@ -25,7 +26,7 @@ const Container = styled.div`
 
 const Logo = () => {
   return (
-    <Container>
+    <Container to="/">
       <img src={logo} alt="" />
     </Container>
   );

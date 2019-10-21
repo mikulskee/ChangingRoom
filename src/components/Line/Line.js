@@ -3,11 +3,15 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   position: absolute;
+  display: none;
   top: 50%;
   left: 50%;
   height: 100%;
   width: 100%;
   transform: translate(-43%, -54%);
+  @media only screen and (min-width: 1024px) {
+    display: block;
+  }
   svg {
     height: 100%;
     width: 100%;
@@ -36,6 +40,7 @@ const Line = () => {
     window.addEventListener("load", () => {
       const path = document.querySelector(".path");
       const pathLength = path.getTotalLength();
+
       console.log(pathLength);
       setPathLength(pathLength);
     });

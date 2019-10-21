@@ -1,13 +1,11 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import { Navigation } from "./components/Navigation/Navigation";
 import Burger from "./components/Burger/Burger";
 import Menu from "./components/Menu/Menu";
 import Icons from "./components/Icons/Icons";
 import Logo from "./components/Logo/Logo";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
+import MainTemplate from "./templates/MainTemplate/MainTemplate";
 
 class App extends Component {
   state = {};
@@ -15,15 +13,14 @@ class App extends Component {
     return (
       <>
         <Menu />
-        <Navigation>
-          <Burger />
-          <Logo />
-          <Icons />
-        </Navigation>
-        <Header />
-        <Main />
-        <Contact />
-        <Footer />
+        <BrowserRouter>
+          <Navigation>
+            <Burger />
+            <Logo />
+            <Icons />
+          </Navigation>
+          <Route exact path="/" component={MainTemplate} />
+        </BrowserRouter>
       </>
     );
   }
