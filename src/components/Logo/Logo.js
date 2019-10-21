@@ -12,7 +12,7 @@ const Container = styled.div`
     height: 6vw;
   }
   @media only screen and (min-width: 1024px) {
-    height: 4vw;
+    height: 40px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);

@@ -17,13 +17,11 @@ const Container = styled.header`
     padding-top: 5vw;
   }
   @media only screen and (min-width: 1024px) {
-    padding-top: 4vw;
+    padding-top: 40px;
   }
-  @media only screen and (min-width: 1024px) {
-    padding-top: 4vw;
-  }
+
   @media only screen and (min-width: 1400px) {
-    padding-top: 62px;
+    padding-top: 60px;
   }
 `;
 
@@ -40,9 +38,11 @@ const Template = styled.div`
   @media only screen and (orientation: landscape) {
     height: 45vw;
   }
-
   @media only screen and (min-width: 1024px) {
-    height: 45vw;
+    height: 460px;
+  }
+  @media only screen and (min-width: 1400px) {
+    height: 600px;
   }
   &.template--office,
   &.template--motto {
@@ -63,11 +63,12 @@ const Template = styled.div`
       background-position: 0% 30%;
     }
     @media only screen and (min-width: 1024px) {
-      height: 45vw;
-      top: 4vw;
+      height: 460px;
+      top: 40px;
     }
     @media only screen and (min-width: 1400px) {
-      top: 62px;
+      top: 60px;
+      height: 600px;
     }
   }
   &.template--motto {
