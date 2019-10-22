@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import logoWhite from "../../images/logo-white.png";
+import logo from "../../images/logo-main.png";
 import { TweenMax } from "gsap/TweenMax";
+import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   transform: translateX(-100%);
@@ -50,7 +51,8 @@ const X = styled.div`
 const Logo = styled.div`
   width: 100%;
   padding: 10px 0;
-  background-color: #000;
+  background-color: #fff;
+  border-bottom: 3px solid black;
   img {
     display: block;
     height: 9vw;
@@ -93,7 +95,6 @@ const Others = styled.div`
 `;
 
 const sections = [
-  { product: "Przebieralnia.com", id: "home" },
   { product: "T-shirty", id: "tshirts" },
   { product: "Koszule & Bluzki", id: "shirts" },
   { product: "Spodnie", id: "pants" },
@@ -105,14 +106,6 @@ const sections = [
 ];
 
 const Menu = () => {
-  const list = sections.map(section => (
-    <li key={section.id}>
-      <a href="/" className={section.id}>
-        {section.product}{" "}
-      </a>
-    </li>
-  ));
-
   const handleClick = () => {
     const menu = document.querySelector(".menu");
     document.body.classList.remove("menu-open");
@@ -122,11 +115,25 @@ const Menu = () => {
     TweenMax.to(menu, 0.25, { css: { transform: "translatex(-100%)" } });
     TweenMax.set(menu, { css: { display: "none" }, delay: 0.25 });
   };
+  const list = sections.map(section => (
+    <li key={section.id}>
+      <Link
+        to={`/products/${section.id}`}
+        onClick={handleClick}
+        className={section.id}
+      >
+        {section.product}
+      </Link>
+    </li>
+  ));
+
   return (
     <Wrap className={"menu"}>
       <Container>
-        <Logo>
-          <img src={logoWhite} alt="Białe logo" />
+        <Logo onClick={handleClick}>
+          <Link to="/">
+            <img src={logo} alt="Białe logo" />
+          </Link>
         </Logo>
         <UL>{list}</UL>
         <Others>

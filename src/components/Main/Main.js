@@ -104,7 +104,7 @@ class Main extends Component {
   render() {
     const products = sections.map(section => (
       <Link
-        to={`products/${section.id}`}
+        to={`/products/${section.id}`}
         key={section.id}
         className={`product ${section.id}`}
       >
