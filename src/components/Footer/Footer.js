@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logoWhite from "../../images/logo-white.png";
+import logo from "../../images/logo-main.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -52,6 +52,9 @@ const Container = styled.footer`
     @media only screen and (min-width: 768px) {
       font-size: 10px;
     }
+    a {
+      color: white;
+    }
     svg {
       path {
         fill: red;
@@ -63,7 +66,7 @@ const Container = styled.footer`
 const Footer = () => {
   return (
     <Container>
-      <img src={logoWhite} alt="białe logo przebieralnia" />
+      <img src={logo} alt="białe logo przebieralnia" />
       <div className="socials">
         <a href="/">
           <FontAwesomeIcon icon={faInstagram} />
@@ -73,8 +76,8 @@ const Footer = () => {
         </a>
       </div>
       <p>
-        © 2019 coded with <FontAwesomeIcon icon={faHeart} /> by Mateusz Mikulski
-        . All rights reserved.
+        © 2019 coded with <FontAwesomeIcon icon={faHeart} /> by{" "}
+        <a href="https://codeverse.pl">Codeverse.pl</a> . All rights reserved.
       </p>
     </Container>
   );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Navigation } from "./components/Navigation/Navigation";
 import Burger from "./components/Burger/Burger";
 import Menu from "./components/Menu/Menu";
@@ -13,15 +13,17 @@ class App extends Component {
   render() {
     return (
       <>
-        <Menu />
         <BrowserRouter>
+          <Menu />
           <Navigation>
             <Burger />
             <Logo />
             <Icons />
           </Navigation>
-          <Route exact path="/" component={MainTemplate} />
-          <Route exact path="/products/:section_id" component={Products} />
+          <Switch>
+            <Route exact path="/" component={MainTemplate} />
+            <Route exact path="/products/:section_id" component={Products} />
+          </Switch>
         </BrowserRouter>
       </>
     );

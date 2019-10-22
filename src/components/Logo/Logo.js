@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo-main.png";
 import { Link } from "react-router-dom";
 
 const Container = styled(Link)`
   height: 8vw;
-  max-height: 54px;
   @media only screen and (orientation: landscape) {
     height: 5vw;
   }
@@ -13,7 +12,7 @@ const Container = styled(Link)`
     height: 6vw;
   }
   @media only screen and (min-width: 1024px) {
-    height: 40px;
+    height: 70px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);

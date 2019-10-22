@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   left: 50%;
   height: 100%;
   width: 100%;
-  transform: translate(-43%, -54%);
+  transform: translate(-43%, -54.2%);
   @media only screen and (min-width: 1024px) {
     display: block;
   }
