@@ -30,18 +30,14 @@ const Line = () => {
     const handleScroll = () => {
       if (window.innerWidth >= 1024 && window.innerWidth < 1399) {
         setStroke(pathLength - window.scrollY * 1.1);
-        console.log("1024");
       } else if (window.innerWidth > 1400) {
         setStroke(pathLength - window.scrollY * 0.8);
-        console.log("1400");
       }
     };
 
     window.addEventListener("load", () => {
       const path = document.querySelector(".path");
       const pathLength = path.getTotalLength();
-
-      console.log(pathLength);
       setPathLength(pathLength);
     });
     window.addEventListener("scroll", handleScroll);
