@@ -21,6 +21,7 @@ class App extends Component {
             <Icons />
           </Navigation>
           <Route exact path="/" component={MainTemplate} />
+
           <Route exact path="/products/:section_id" component={Products} />
         </BrowserRouter>
       </>

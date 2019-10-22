@@ -6,6 +6,18 @@ const Wrapper = styled.div`
   height: 300px;
   overflow: hidden;
   margin-bottom: 20px;
+  @media only screen and (orientation: landscape) {
+    width: 26%;
+    margin-bottom: 30px;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 21%;
+    height: 370px;
+  }
+  @media only screen and (min-width: 1366px) {
+    width: 16%;
+    height: 480px;
+  }
 
   .cover {
     height: 70%;
@@ -23,11 +35,17 @@ const Wrapper = styled.div`
     font-weight: 800;
     font-style: italic;
     font-size: 8px;
+    @media only screen and (min-width: 1024px) {
+      font-size: 12px;
+    }
   }
 
   .price {
     font-weight: 800;
     margin-left: 5px;
+    @media only screen and (min-width: 1024px) {
+      font-size: 18px;
+    }
   }
 
   .buttons {

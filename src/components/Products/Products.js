@@ -53,6 +53,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer";
+import { ProductsWrapper } from "../ProductsWrapper/ProductsWrapper";
 
 const shop = [
   {
@@ -221,6 +222,13 @@ const Container = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-around;
+  flex-grow: 1;
+  max-width: 1366px;
+  margin: 0 auto;
+  @media only screen and (min-width: 768px) {
+    padding-top: 100px;
+    align-items: flex-start;
+  }
 `;
 
 const Products = props => {
@@ -255,10 +263,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   } else if (props.match.params.section_id === "shirts") {
     const newProducts = shop
@@ -280,10 +288,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   } else if (props.match.params.section_id === "pants") {
     const newProducts = shop
@@ -305,10 +313,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   } else if (props.match.params.section_id === "hoodies") {
     const newProducts = shop
@@ -330,10 +338,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   } else if (props.match.params.section_id === "skirts") {
     const newProducts = shop
@@ -355,10 +363,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   } else if (props.match.params.section_id === "jackets") {
     const newProducts = shop
@@ -380,10 +388,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   } else if (props.match.params.section_id === "bags") {
     const newProducts = shop
@@ -405,10 +413,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   } else if (props.match.params.section_id === "additives") {
     const newProducts = shop
@@ -430,10 +438,10 @@ const Products = props => {
       ));
 
     return (
-      <>
+      <ProductsWrapper>
         <Container>{newProducts}</Container>
         <Footer />
-      </>
+      </ProductsWrapper>
     );
   }
 };

@@ -23,10 +23,15 @@ const Wrapper = styled.div`
 `;
 
 const Line = () => {
-  const [pathLength, setPathLength] = useState();
+  const [pathLength, setPathLength] = useState(1993);
   const [stroke, setStroke] = useState(pathLength);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
+    const path = document.querySelector(".path");
+    const pathLength = path.getTotalLength();
+    setPathLength(pathLength);
+
     const handleScroll = () => {
       if (window.innerWidth >= 1024 && window.innerWidth < 1399) {
         setStroke(pathLength - window.scrollY * 1.1);
@@ -35,11 +40,9 @@ const Line = () => {
       }
     };
 
-    window.addEventListener("load", () => {
-      const path = document.querySelector(".path");
-      const pathLength = path.getTotalLength();
-      setPathLength(pathLength);
-    });
+    // window.addEventListener("load", () => {
+
+    // });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
