@@ -16,13 +16,13 @@ const Container = styled.main`
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 10px 0;
 
   @media only screen and (min-width: 1024px) {
     width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    padding: 10px 0;
   }
   @media only screen and (min-width: 1400px) {
     width: 1100px;
@@ -61,6 +61,7 @@ const Container = styled.main`
       font-family: "Source Sans Pro", sans-serif;
       font-size: 12px;
       letter-spacing: 0.5em;
+      font-weight: 400;
       ::after {
         content: "";
         position: absolute;
@@ -103,7 +104,7 @@ class Main extends Component {
   render() {
     const products = sections.map(section => (
       <Link
-        to={section.id}
+        to={`products/${section.id}`}
         key={section.id}
         className={`product ${section.id}`}
       >
