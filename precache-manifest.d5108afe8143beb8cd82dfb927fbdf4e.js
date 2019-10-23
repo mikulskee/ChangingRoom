@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0b1872abcc2ff7200a5996fc0ba4148b",
+    "revision": "4c437da083a3fc8ddf049c599b1abceb",
     "url": "/ChangingRoom/index.html"
   },
   {
-    "revision": "572f79fd19dde1645fc7",
-    "url": "/ChangingRoom/static/css/main.3fb588b7.chunk.css"
+    "revision": "cf6048b4146be101d80f",
+    "url": "/ChangingRoom/static/css/main.40b7fead.chunk.css"
   },
   {
-    "revision": "0e54c937fe50d002dd28",
-    "url": "/ChangingRoom/static/js/2.d745ee5d.chunk.js"
+    "revision": "55f75870904c02eee9cc",
+    "url": "/ChangingRoom/static/js/2.42a3a7cd.chunk.js"
   },
   {
-    "revision": "572f79fd19dde1645fc7",
-    "url": "/ChangingRoom/static/js/main.e032ea12.chunk.js"
+    "revision": "cf6048b4146be101d80f",
+    "url": "/ChangingRoom/static/js/main.c0186ca9.chunk.js"
   },
   {
     "revision": "3ac7c76fbe6c078deac8",
@@ -212,12 +212,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ChangingRoom/static/media/jackets.66a5790b.jpg"
   },
   {
-    "revision": "57ac71746c8d609efd9470cdd790a022",
-    "url": "/ChangingRoom/static/media/logo-white.57ac7174.png"
-  },
-  {
-    "revision": "cd39ab474b890f4a26f0d8fa6612a0ec",
-    "url": "/ChangingRoom/static/media/logo.cd39ab47.png"
+    "revision": "249cb95d64bd88a09379c5a716f7ff3d",
+    "url": "/ChangingRoom/static/media/logo-main.249cb95d.png"
   },
   {
     "revision": "e1fb52c9537e872145c184bd595b347a",
