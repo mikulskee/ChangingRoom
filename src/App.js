@@ -6,25 +6,30 @@ import Menu from "./components/Menu/Menu";
 import Icons from "./components/Icons/Icons";
 import Logo from "./components/Logo/Logo";
 import MainTemplate from "./templates/MainTemplate/MainTemplate";
+import CartTemplate from "./templates/CartTemplate/CartTemplate";
 import Products from "./components/Products/Products";
+import CartContextProvider from "./contexts/CartContext";
 
 class App extends Component {
   state = {};
   render() {
     return (
       <>
-        <BrowserRouter>
-          <Menu />
-          <Navigation>
-            <Burger />
-            <Logo />
-            <Icons />
-          </Navigation>
-          <Switch>
-            <Route exact path="/" component={MainTemplate} />
-            <Route exact path="/products/:section_id" component={Products} />
-          </Switch>
-        </BrowserRouter>
+        <CartContextProvider>
+          <BrowserRouter>
+            <Menu />
+            <Navigation>
+              <Burger />
+              <Logo />
+              <Icons />
+            </Navigation>
+            <Switch>
+              <Route exact path="/" component={MainTemplate} />
+              <Route exact path="/cart" component={CartTemplate} />
+              <Route exact path="/products/:section_id" component={Products} />
+            </Switch>
+          </BrowserRouter>
+        </CartContextProvider>
       </>
     );
   }

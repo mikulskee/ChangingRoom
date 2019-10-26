@@ -130,6 +130,9 @@ const Wrapper = styled.div`
     z-index: -9999;
     color: white;
     font-size: 30px;
+    @media only screen and (min-width: 1024px) {
+      font-size: 40px;
+    }
 
     &.active {
       z-index: 9999;

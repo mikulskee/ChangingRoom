@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,6 +7,10 @@ import {
   faHeart,
   faShoppingCart
 } from "@fortawesome/free-solid-svg-icons";
+
+import { Link } from "react-router-dom";
+
+import { CartContext } from "../../contexts/CartContext";
 
 const Wrapper = styled.div`
   font-size: 16px;
@@ -22,12 +26,27 @@ const Wrapper = styled.div`
     }
   }
 
+  a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 8px;
+    @media only screen and (min-width: 768px) {
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+    span {
+      font-family: "Source Sans Pro", sans-serif;
+    }
+  }
+
   .cart {
     padding: 5px 0 5px 8px;
   }
 `;
 
 const Icons = () => {
+  const { cartItems } = useContext(CartContext);
+  console.log(cartItems);
   return (
     <Wrapper>
       <button className="user">
@@ -42,9 +61,10 @@ const Icons = () => {
         <FontAwesomeIcon icon={faHeart} />
       </button>
 
-      <button className="cart">
-        <FontAwesomeIcon icon={faShoppingCart} /> (0)
-      </button>
+      <Link to="/cart" className="cart">
+        <FontAwesomeIcon icon={faShoppingCart} />{" "}
+        <span>({cartItems.length})</span>
+      </Link>
     </Wrapper>
   );
 };
