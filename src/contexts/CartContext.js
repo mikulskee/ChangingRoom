@@ -23,9 +23,19 @@ const CartContextProvider = props => {
   const addProductToCart = newProduct => {
     setCartItems([...cartItems, newProduct]);
   };
+  const removeProductFromCart = productID => {
+    const newProductsInBasket = cartItems.filter(
+      item => item.description !== productID
+    );
+
+    // console.log(newProductsInBasket);
+    setCartItems(newProductsInBasket);
+  };
 
   return (
-    <CartContext.Provider value={{ cartItems, addProductToCart }}>
+    <CartContext.Provider
+      value={{ cartItems, addProductToCart, removeProductFromCart }}
+    >
       {props.children}
     </CartContext.Provider>
   );

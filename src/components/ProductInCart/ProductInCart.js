@@ -13,6 +13,25 @@ const Wrapper = styled.div`
   margin: 0 auto 40px;
   max-width: 1320px;
   font-family: "Source Sans Pro", sans-serif;
+  h1 {
+    position: relative;
+    margin-top: 15px;
+    font-family: "Source Sans Pro", sans-serif;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 20px;
+    ::after {
+      position: absolute;
+      display: block;
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: #ccc;
+      bottom: 0;
+      left: 0;
+    }
+  }
   .image {
     width: 40%;
   }
@@ -121,6 +140,9 @@ const ProductDetails = styled.div`
     .svg {
       padding: 10px;
       cursor: pointer;
+      svg {
+        pointer-events: none;
+      }
     }
   }
 `;
@@ -147,12 +169,16 @@ const CartTotals = styled.div`
 `;
 
 const ProductInCart = () => {
-  const { cartItems } = useContext(CartContext);
-  console.log(cartItems);
-  const Product = cartItems.map(item => (
+  const { cartItems, removeProductFromCart } = useContext(CartContext);
+  const removeProduct = e => {
+    const productID = e.target.parentNode.nextSibling.innerText;
+    removeProductFromCart(productID);
+  };
+
+  const Products = cartItems.map(item => (
     <ProductDetails key={item.description} bg={item.img}>
       <div className="image">
-        <div className="svg">
+        <div className="svg" onClick={removeProduct}>
           <FontAwesomeIcon icon={faTimesCircle} />
         </div>
         <div className="product-image"></div>
@@ -162,23 +188,34 @@ const ProductInCart = () => {
     </ProductDetails>
   ));
 
-  const totalPrices = cartItems
-    .map(item => item.price)
-    .reduce((prevValue, currentValue) => prevValue + currentValue);
+  const totalPrices = () => {
+    if (cartItems.length > 0) {
+      const Price = cartItems
+        .map(item => item.price)
+        .reduce((prevValue, currentValue) => prevValue + currentValue);
+      return Price;
+    } else return;
+  };
 
   return (
     <Wrapper>
-      <Headlines>
-        <div className="image"></div>
-        <div className="product-name">Nazwa produktu</div>
-        <div className="price">Cena</div>
-      </Headlines>
-      {Product}
-      <CartTotals>
-        <div className="image"></div>
-        <div className="product-name">Suma:</div>
-        <div className="price">{totalPrices} zł</div>
-      </CartTotals>
+      {cartItems.length > 0 ? (
+        <>
+          <Headlines>
+            <div className="image"></div>
+            <div className="product-name">Nazwa produktu</div>
+            <div className="price">Cena</div>
+          </Headlines>
+          {Products}
+          <CartTotals>
+            <div className="image"></div>
+            <div className="product-name">Suma:</div>
+            <div className="price">{totalPrices()} zł</div>
+          </CartTotals>
+        </>
+      ) : (
+        <h1>Koszyk jest pusty</h1>
+      )}
     </Wrapper>
   );
 };
