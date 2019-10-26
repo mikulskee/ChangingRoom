@@ -50,8 +50,12 @@ import additives4 from "../../images/products/additives/4.jpg";
 import additives5 from "../../images/products/additives/5.jpg";
 import Product from "../Product/Product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartPlus,
+  faSearchPlus,
+  faHeart
+} from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import Footer from "../Footer/Footer";
 import { ProductsWrapper } from "../ProductsWrapper/ProductsWrapper";
 
@@ -245,12 +249,25 @@ const Products = props => {
   const handleAdd = e => {
     e.target.classList.add("disabled");
   };
+  const showProduct = e => {
+    e.target.previousSibling.classList.add("active");
+  };
+  const hideProduct = e => {
+    const fullSize = document.querySelector(".full-size.active");
+    fullSize.classList.remove("active");
+  };
 
   const newProducts = shop
     .filter(i => i.section === props.match.params.section_id)[0]
     .products.map(product => (
       <Product key={product.description} bg={product.img}>
-        <div className="cover"></div>
+        <div className="full-size">
+          <img src={product.img} alt="zdjęcie produktu" />
+          <FontAwesomeIcon icon={faTimesCircle} onClick={hideProduct} />
+        </div>
+        <div className="cover" onClick={showProduct}>
+          <FontAwesomeIcon icon={faSearchPlus} />
+        </div>
         <p className="description">{product.description}</p>
         <p className="price">{product.price} zł</p>
         <div className="buttons">
@@ -263,7 +280,6 @@ const Products = props => {
         </div>
       </Product>
     ));
-  console.log(newProducts[0].products);
 
   return (
     <ProductsWrapper>
