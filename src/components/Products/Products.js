@@ -11,6 +11,7 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import Footer from "../Footer/Footer";
 import { ProductsWrapper } from "../ProductsWrapper/ProductsWrapper";
 import { ShopContext } from "../../contexts/ShopContext";
+import { CartContext } from "../../contexts/CartContext";
 
 const Container = styled.div`
   padding-top: 80px;
@@ -37,11 +38,21 @@ const Products = props => {
     window.scrollTo(0, 0);
   });
   const { shopItems } = useContext(ShopContext);
+  const { addProductToCart } = useContext(CartContext);
   const handleFav = e => {
     e.target.classList.toggle("active");
   };
   const handleAdd = e => {
     e.target.classList.add("disabled");
+    const keyID = e.target.parentNode.parentNode.querySelector(".description")
+      .innerText;
+    const sectionID = props.match.params.section_id;
+
+    const addedProduct = shopItems
+      .filter(item => item.section === sectionID)[0]
+      .products.filter(item => item.description === keyID)[0];
+
+    addProductToCart(addedProduct);
   };
   const showProduct = e => {
     e.target.previousSibling.classList.add("active");
