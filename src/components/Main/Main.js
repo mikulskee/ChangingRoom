@@ -76,6 +76,7 @@ const Container = styled.main`
       }
       @media only screen and (min-width: 768px) {
         font-size: 16px;
+        width: 50%;
       }
     }
   }

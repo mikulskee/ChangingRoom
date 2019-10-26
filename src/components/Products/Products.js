@@ -246,206 +246,30 @@ const Products = props => {
     e.target.classList.add("disabled");
   };
 
-  if (props.match.params.section_id === "tshirts") {
-    const newProducts = shop
-      .filter(section => section.section === "tshirts")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
+  const newProducts = shop
+    .filter(i => i.section === props.match.params.section_id)[0]
+    .products.map(product => (
+      <Product key={product.description} bg={product.img}>
+        <div className="cover"></div>
+        <p className="description">{product.description}</p>
+        <p className="price">{product.price} zł</p>
+        <div className="buttons">
+          <button className="add" onClick={handleAdd}>
+            <FontAwesomeIcon icon={faCartPlus} />
+          </button>
+          <button className="fav" onClick={handleFav}>
+            <FontAwesomeIcon icon={faHeart} />
+          </button>
+        </div>
+      </Product>
+    ));
+  console.log(newProducts[0].products);
 
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  } else if (props.match.params.section_id === "shirts") {
-    const newProducts = shop
-      .filter(section => section.section === "shirts")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
-
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  } else if (props.match.params.section_id === "pants") {
-    const newProducts = shop
-      .filter(section => section.section === "pants")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
-
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  } else if (props.match.params.section_id === "hoodies") {
-    const newProducts = shop
-      .filter(section => section.section === "hoodies")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
-
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  } else if (props.match.params.section_id === "skirts") {
-    const newProducts = shop
-      .filter(section => section.section === "skirts")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
-
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  } else if (props.match.params.section_id === "jackets") {
-    const newProducts = shop
-      .filter(section => section.section === "jackets")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
-
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  } else if (props.match.params.section_id === "bags") {
-    const newProducts = shop
-      .filter(section => section.section === "bags")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
-
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  } else if (props.match.params.section_id === "additives") {
-    const newProducts = shop
-      .filter(section => section.section === "additives")[0]
-      .products.map(product => (
-        <Product key={product.description} bg={product.img}>
-          <div className="cover"></div>
-          <p className="description">{product.description}</p>
-          <p className="price">{product.price} zł</p>
-          <div className="buttons">
-            <button className="add" onClick={handleAdd}>
-              <FontAwesomeIcon icon={faCartPlus} />
-            </button>
-            <button className="fav" onClick={handleFav}>
-              <FontAwesomeIcon icon={faHeart} />
-            </button>
-          </div>
-        </Product>
-      ));
-
-    return (
-      <ProductsWrapper>
-        <Container>{newProducts}</Container>
-        <Footer />
-      </ProductsWrapper>
-    );
-  }
+  return (
+    <ProductsWrapper>
+      <Container>{newProducts}</Container>
+      <Footer />
+    </ProductsWrapper>
+  );
 };
 export default Products;

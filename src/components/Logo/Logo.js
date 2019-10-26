@@ -12,7 +12,7 @@ const Container = styled(Link)`
     height: 6vw;
   }
   @media only screen and (min-width: 1024px) {
-    height: 70px;
+    height: 50px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);

@@ -34,15 +34,11 @@ const Line = () => {
 
     const handleScroll = () => {
       if (window.innerWidth >= 1024 && window.innerWidth < 1399) {
-        setStroke(pathLength - window.scrollY * 1.1);
+        setStroke(pathLength - window.scrollY);
       } else if (window.innerWidth > 1400) {
         setStroke(pathLength - window.scrollY * 0.8);
       }
     };
-
-    // window.addEventListener("load", () => {
-
-    // });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
