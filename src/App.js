@@ -9,13 +9,14 @@ import MainTemplate from "./templates/MainTemplate/MainTemplate";
 import CartTemplate from "./templates/CartTemplate/CartTemplate";
 import Products from "./components/Products/Products";
 import CartContextProvider from "./contexts/CartContext";
+import ShopContextProvider from "./contexts/ShopContext";
 
 class App extends Component {
   state = {};
   render() {
     return (
-      <>
-        <CartContextProvider>
+      <CartContextProvider>
+        <ShopContextProvider>
           <BrowserRouter>
             <Menu />
             <Navigation>
@@ -29,8 +30,8 @@ class App extends Component {
               <Route exact path="/products/:section_id" component={Products} />
             </Switch>
           </BrowserRouter>
-        </CartContextProvider>
-      </>
+        </ShopContextProvider>
+      </CartContextProvider>
     );
   }
 }

@@ -46,7 +46,7 @@ const Wrapper = styled.div`
 
 const Icons = () => {
   const { cartItems } = useContext(CartContext);
-  console.log(cartItems);
+
   return (
     <Wrapper>
       <button className="user">
