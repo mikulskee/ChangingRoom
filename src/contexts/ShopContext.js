@@ -53,6 +53,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = props => {
   const [shopItems] = useState([
     {
+      sectionPL: "T-shirty",
       section: "tshirts",
       products: [
         { description: "Czerwony t-shirt z orłem", img: tshirt1, price: 69 },
@@ -64,6 +65,7 @@ const ShopContextProvider = props => {
       mainImg: mainTshirt
     },
     {
+      sectionPL: "Koszule & Bluzki",
       section: "shirts",
       products: [
         { description: "Biała bluzka z ornamentem", img: shirts1, price: 79 },
@@ -78,11 +80,13 @@ const ShopContextProvider = props => {
           price: 79
         },
         { description: "Biała koszula ze wzorem", img: shirts4, price: 79 },
+
         { description: "Koszula z kwiecistym wzorem", img: shirts5, price: 79 }
       ],
       mainImg: mainShirt
     },
     {
+      sectionPL: "Spodnie",
       section: "pants",
       products: [
         { description: "Kraciaste spodnie", img: pants1, price: 99 },
@@ -102,6 +106,7 @@ const ShopContextProvider = props => {
       mainImg: mainPants
     },
     {
+      sectionPL: "Bluzy",
       section: "hoodies",
       products: [
         { description: "Szara bluza z misiem Stacy", img: hoodies1, price: 89 },
@@ -121,6 +126,7 @@ const ShopContextProvider = props => {
       mainImg: mainHoodie
     },
     {
+      sectionPL: "Sukienki & Spódnice",
       section: "skirts",
       products: [
         { description: "Szara sukienka z kokardą", img: skirts1, price: 99 },
@@ -144,6 +150,7 @@ const ShopContextProvider = props => {
       mainImg: mainSkirt
     },
     {
+      sectionPL: "Kurtki & Marynarki",
       section: "jackets",
       products: [
         {
@@ -171,6 +178,7 @@ const ShopContextProvider = props => {
       mainImg: mainJacket
     },
     {
+      sectionPL: "Torebki",
       section: "bags",
       products: [
         { description: "Biała torebka", img: bags1, price: 129 },
@@ -190,6 +198,7 @@ const ShopContextProvider = props => {
       mainImg: mainBag
     },
     {
+      sectionPL: "Dodatki",
       section: "additives",
       products: [
         {

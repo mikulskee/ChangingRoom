@@ -8,14 +8,13 @@ const Wrapper = styled.div`
   margin-bottom: 20px;
   @media only screen and (orientation: landscape) {
     width: 26%;
-    margin-bottom: 30px;
+    margin: 0 30px 30px;
   }
   @media only screen and (min-width: 768px) {
     width: 21%;
     height: 370px;
   }
   @media only screen and (min-width: 1366px) {
-    width: 16%;
     height: 480px;
   }
   .cover {

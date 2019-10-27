@@ -12,9 +12,9 @@ import Footer from "../Footer/Footer";
 import { ProductsWrapper } from "../ProductsWrapper/ProductsWrapper";
 import { ShopContext } from "../../contexts/ShopContext";
 import { CartContext } from "../../contexts/CartContext";
+import ProductBanner from "../ProductBanner/ProductBanner";
 
 const Container = styled.div`
-  padding-top: 80px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,14 +22,19 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-grow: 1;
-  max-width: 1366px;
   margin: 0 auto;
+  padding-top: 80px;
   @media only screen and (min-width: 768px) {
-    padding-top: 100px;
     align-items: flex-start;
-  }
-  @media only screen and (min-width: 768px) {
     padding-top: 130px;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 70%;
+    margin-right: 20px;
+    padding-left: 23%;
+  }
+  @media only screen and (min-width: 1300px) {
+    margin: 0 auto;
   }
 `;
 
@@ -88,6 +93,7 @@ const Products = props => {
 
   return (
     <ProductsWrapper>
+      <ProductBanner />
       <Container>{newProducts}</Container>
       <Footer />
     </ProductsWrapper>
