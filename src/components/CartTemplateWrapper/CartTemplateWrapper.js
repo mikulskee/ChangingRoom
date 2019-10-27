@@ -10,4 +10,7 @@ export const CartTemplateWrapper = styled.section`
   @media only screen and (min-width: 768px) {
     padding-top: 100px;
   }
+  @media only screen and (min-width: 1024px) {
+    padding-top: 155px;
+  }
 `;

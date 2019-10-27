@@ -53,8 +53,14 @@ export const ShopContext = createContext();
 const ShopContextProvider = props => {
   const [shopItems] = useState([
     {
+      sectionPL: "Strona Główna",
+      section: "",
+      link: "/"
+    },
+    {
       sectionPL: "T-shirty",
       section: "tshirts",
+      link: "/products/tshirts",
       products: [
         { description: "Czerwony t-shirt z orłem", img: tshirt1, price: 69 },
         { description: "Zółty t-shirt z orłem", img: tshirt2, price: 59 },
@@ -67,6 +73,7 @@ const ShopContextProvider = props => {
     {
       sectionPL: "Koszule & Bluzki",
       section: "shirts",
+      link: "/products/shirts",
       products: [
         { description: "Biała bluzka z ornamentem", img: shirts1, price: 79 },
         {
@@ -88,6 +95,7 @@ const ShopContextProvider = props => {
     {
       sectionPL: "Spodnie",
       section: "pants",
+      link: "/products/pants",
       products: [
         { description: "Kraciaste spodnie", img: pants1, price: 99 },
         {
@@ -108,6 +116,7 @@ const ShopContextProvider = props => {
     {
       sectionPL: "Bluzy",
       section: "hoodies",
+      link: "/products/hoodies",
       products: [
         { description: "Szara bluza z misiem Stacy", img: hoodies1, price: 89 },
         {
@@ -128,6 +137,7 @@ const ShopContextProvider = props => {
     {
       sectionPL: "Sukienki & Spódnice",
       section: "skirts",
+      link: "/products/skirts",
       products: [
         { description: "Szara sukienka z kokardą", img: skirts1, price: 99 },
         {
@@ -152,6 +162,7 @@ const ShopContextProvider = props => {
     {
       sectionPL: "Kurtki & Marynarki",
       section: "jackets",
+      link: "/products/jackets",
       products: [
         {
           description: "Klasyczny granatowy żakiet",
@@ -180,6 +191,7 @@ const ShopContextProvider = props => {
     {
       sectionPL: "Torebki",
       section: "bags",
+      link: "/products/bags",
       products: [
         { description: "Biała torebka", img: bags1, price: 129 },
         {
@@ -200,6 +212,7 @@ const ShopContextProvider = props => {
     {
       sectionPL: "Dodatki",
       section: "additives",
+      link: "/products/additives",
       products: [
         {
           description: "Łososiowa apaszka w serca",

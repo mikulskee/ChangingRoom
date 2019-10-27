@@ -26,12 +26,13 @@ const Container = styled.div`
   padding-top: 80px;
   @media only screen and (min-width: 768px) {
     align-items: flex-start;
-    padding-top: 130px;
+    padding-top: 135px;
   }
   @media only screen and (min-width: 1024px) {
     width: 70%;
     margin-right: 20px;
     padding-left: 23%;
+    padding-top: 165px;
   }
   @media only screen and (min-width: 1300px) {
     margin: 0 auto;

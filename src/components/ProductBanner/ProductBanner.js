@@ -5,6 +5,7 @@ import { ShopContext } from "../../contexts/ShopContext";
 
 const Wrapper = styled.aside`
   position: fixed;
+  display: none;
   height: 100%;
   width: 20%;
   background-image: url(${({ bg }) => (bg ? bg : null)});
@@ -14,6 +15,9 @@ const Wrapper = styled.aside`
   overflow: hidden;
   margin-right: 50px;
   z-index: -1;
+  @media only screen and (min-width: 1024px) {
+    display: block;
+  }
   ::before {
     content: "";
     display: block;
