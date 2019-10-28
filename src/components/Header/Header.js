@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { TimelineMax } from "gsap/TimelineMax";
 import header1 from "../../images/header1.jpg";
@@ -17,11 +17,11 @@ const Container = styled.header`
     padding-top: 5vw;
   }
   @media only screen and (min-width: 1024px) {
-    padding-top: 40px;
+    padding-top: 130px;
   }
 
-  @media only screen and (min-width: 1400px) {
-    padding-top: 60px;
+  @media only screen and (min-width: 1375px) {
+    padding-top: 90px;
   }
 `;
 
@@ -32,7 +32,7 @@ const Template = styled.div`
   will-change: transform;
   background-image: url(${header1});
   height: 64vw;
-  max-height: 645px;
+  max-height: 650px;
   background-position: center;
   background-size: cover;
   @media only screen and (orientation: landscape) {
@@ -41,15 +41,15 @@ const Template = styled.div`
   @media only screen and (min-width: 1024px) {
     height: 460px;
   }
-  @media only screen and (min-width: 1400px) {
-    height: 600px;
+  @media only screen and (min-width: 1375px) {
+    height: 650px;
   }
   &.template--office,
   &.template--motto {
     position: absolute;
     top: 9vw;
     height: 64vw;
-    max-height: 645px;
+    max-height: 650px;
     width: 100%;
     background-image: url(${header2});
 
@@ -64,11 +64,11 @@ const Template = styled.div`
     }
     @media only screen and (min-width: 1024px) {
       height: 460px;
-      top: 40px;
+      top: 130px;
     }
-    @media only screen and (min-width: 1400px) {
-      top: 60px;
-      height: 600px;
+    @media only screen and (min-width: 1375px) {
+      top: 90px;
+      height: 650px;
     }
   }
   &.template--motto {
@@ -131,8 +131,8 @@ const headers = [
   }
 ];
 
-class Header extends Component {
-  componentDidMount() {
+const Header = () => {
+  useEffect(() => {
     const casual = document.querySelector(".template--casual");
     const office = document.querySelector(".template--office");
     const motto = document.querySelector(".template--motto");
@@ -153,19 +153,18 @@ class Header extends Component {
       .to(casual, 1, { xPercent: 0, delay: -1 });
 
     tlHeader.repeat(-1);
-  }
-  render() {
-    const headersLayouts = headers.map(header => (
-      <Template key={header.id} className={`template--${header.id}`}>
-        <h1>
-          {header.title}
-          <br />
-          <span>{header.span}</span>
-        </h1>
-      </Template>
-    ));
-    return <Container>{headersLayouts}</Container>;
-  }
-}
+  });
+  const headersLayouts = headers.map(header => (
+    <Template key={header.id} className={`template--${header.id}`}>
+      <h1>
+        {header.title}
+        <br />
+        <span>{header.span}</span>
+      </h1>
+    </Template>
+  ));
+
+  return <Container>{headersLayouts}</Container>;
+};
 
 export default Header;
