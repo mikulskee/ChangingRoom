@@ -10,9 +10,10 @@ import {
 import { Link, withRouter } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { SearchContext } from "../../contexts/SearchContext";
-import { TweenMax } from "gsap/TweenMax";
+
 import { ShopContext } from "../../contexts/ShopContext";
 import { SearchInputContext } from "../../contexts/SearchInputContext";
+import { openInput, closeInput } from "../../animations/InputAnimations";
 
 const Wrapper = styled.div`
   position: relative;
@@ -84,38 +85,12 @@ const Icons = props => {
 
   const handleSearch = _ => {
     const divSearch = document.querySelector("div.search");
-    const buttonUser = document.querySelector("button.user");
-    const inputSearch = document.querySelector("input.search");
     divSearch.classList.toggle("active");
 
     if (divSearch.classList.contains("active")) {
-      new TweenMax(divSearch, 0.15, {
-        css: { transform: "translateX(-214px)" }
-      });
-      new TweenMax(buttonUser, 0.15, {
-        css: { transform: "translateX(-214px)" }
-      });
-      new TweenMax(inputSearch, 0.15, {
-        css: { transform: "translateY(-50%)" },
-        delay: 0.15
-      });
+      openInput();
     } else if (!divSearch.classList.contains("active")) {
-      new TweenMax(inputSearch, 0.15, {
-        css: { transform: "translateY(100%)" }
-      });
-      new TweenMax(
-        divSearch,
-        0.15,
-        {
-          css: { transform: "translateX(0)" },
-          delay: 0.15
-        },
-        "+=0.15"
-      );
-      new TweenMax(buttonUser, 0.15, {
-        css: { transform: "translateX(0)" },
-        delay: 0.15
-      });
+      closeInput();
     }
   };
 
