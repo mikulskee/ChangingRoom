@@ -5,9 +5,11 @@ import { ShopContext } from "../../contexts/ShopContext";
 
 const Wrapper = styled.aside`
   position: fixed;
+  top: 0;
+  left: 0;
   display: none;
   height: 100%;
-  width: 20%;
+  width: 17%;
   background-image: url(${({ bg }) => (bg ? bg : null)});
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,7 +29,7 @@ const Wrapper = styled.aside`
     top: 0;
     left: 0;
     background-color: #171717;
-    opacity: 0.3;
+    opacity: 0.35;
   }
 `;
 const TitleBanner = styled.h1`

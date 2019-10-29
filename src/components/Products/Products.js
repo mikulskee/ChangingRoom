@@ -16,16 +16,16 @@ const Container = styled.div`
   justify-content: space-around;
   flex-grow: 1;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 50px;
   @media only screen and (min-width: 768px) {
     align-items: flex-start;
-    padding-top: 135px;
+    padding-top: 80px;
   }
   @media only screen and (min-width: 1024px) {
     width: 70%;
     margin-right: 20px;
     padding-left: 23%;
-    padding-top: 165px;
+    padding-top: 100px;
   }
   @media only screen and (min-width: 1300px) {
     margin: 0 auto;

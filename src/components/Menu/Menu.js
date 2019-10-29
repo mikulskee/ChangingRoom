@@ -101,7 +101,7 @@ const sections = [
   { product: "Bluzy", id: "hoodies" },
   { product: "Sukienki & Spódnice", id: "skirts" },
   { product: "Kurtki & Marynarki", id: "jackets" },
-  { product: "Buty", id: "shoes" },
+  { product: "Torby", id: "bags" },
   { product: "Dodatki", id: "additives" }
 ];
 

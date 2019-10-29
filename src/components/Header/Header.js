@@ -9,20 +9,6 @@ const Container = styled.header`
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 9vw;
-  @media only screen and (orientation: landscape) {
-    padding-top: 4vw;
-  }
-  @media only screen and (min-width: 768px) {
-    padding-top: 5vw;
-  }
-  @media only screen and (min-width: 1024px) {
-    padding-top: 130px;
-  }
-
-  @media only screen and (min-width: 1375px) {
-    padding-top: 90px;
-  }
 `;
 
 const Template = styled.div`
@@ -47,27 +33,22 @@ const Template = styled.div`
   &.template--office,
   &.template--motto {
     position: absolute;
-    top: 9vw;
     height: 64vw;
     max-height: 650px;
     width: 100%;
     background-image: url(${header2});
 
     @media only screen and (orientation: landscape) {
-      top: 4vw;
       height: 45vw;
       background-position: 0% 30%;
     }
     @media only screen and (min-width: 768px) {
-      top: 5vw;
       background-position: 0% 30%;
     }
     @media only screen and (min-width: 1024px) {
       height: 460px;
-      top: 130px;
     }
     @media only screen and (min-width: 1375px) {
-      top: 90px;
       height: 650px;
     }
   }

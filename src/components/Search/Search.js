@@ -7,7 +7,7 @@ import { closeInput } from "../../animations/InputAnimations";
 import Product from "../Product/Product";
 
 const Wrapper = styled.section`
-  padding-top: 200px;
+  padding-top: 10px;
   text-align: center;
 `;
 
