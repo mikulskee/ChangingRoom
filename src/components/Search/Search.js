@@ -11,6 +11,21 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
+const Container = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+`;
+const Desccription = styled.p`
+  text-align: center;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 20px 0;
+`;
 const Search = props => {
   const {
     resetSearchedItems,
@@ -41,7 +56,17 @@ const Search = props => {
 
   return (
     <Wrapper>
-      Wyniki wyszukiwania dla słowa "{searchedWord}" {newProducts}
+      {searchedItems.length === 0 ? (
+        <Desccription>
+          Brak wyników wyszukiwania dla słowa "{searchedWord}"
+        </Desccription>
+      ) : (
+        <Desccription>
+          Wyniki wyszukiwania dla słowa "{searchedWord}":
+        </Desccription>
+      )}
+
+      <Container>{newProducts}</Container>
     </Wrapper>
   );
 };

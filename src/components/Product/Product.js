@@ -9,6 +9,8 @@ import {
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { ShopContext } from "../../contexts/ShopContext";
 import { CartContext } from "../../contexts/CartContext";
+import { withRouter } from "react-router-dom";
+import { SearchContext } from "../../contexts/SearchContext";
 
 const Wrapper = styled.div`
   width: 40%;
@@ -80,6 +82,7 @@ const Wrapper = styled.div`
     font-weight: 800;
     font-style: italic;
     font-size: 8px;
+    text-align: left;
     @media only screen and (min-width: 1024px) {
       font-size: 12px;
     }
@@ -87,6 +90,7 @@ const Wrapper = styled.div`
   .price {
     font-weight: 800;
     margin-left: 5px;
+    text-align: left;
     @media only screen and (min-width: 1024px) {
       font-size: 18px;
     }
@@ -189,6 +193,7 @@ const Wrapper = styled.div`
 const Product = props => {
   const { shopItems } = useContext(ShopContext);
   const { addProductToCart } = useContext(CartContext);
+  const { searchedItems } = useContext(SearchContext);
 
   const handleFav = e => {
     e.target.classList.toggle("active");
@@ -199,11 +204,17 @@ const Product = props => {
       .innerText;
     const sectionID = props.match.params.section_id;
 
-    const addedProduct = shopItems
-      .filter(item => item.section === sectionID)[0]
-      .products.filter(item => item.description === keyID)[0];
-
-    addProductToCart(addedProduct);
+    if (props.location.pathname === "/search") {
+      const addedProduct = searchedItems.filter(
+        item => item.description === keyID
+      )[0];
+      addProductToCart(addedProduct);
+    } else {
+      const addedProduct = shopItems
+        .filter(item => item.section === sectionID)[0]
+        .products.filter(item => item.description === keyID)[0];
+      addProductToCart(addedProduct);
+    }
   };
   const showProduct = e => {
     e.target.previousSibling.classList.add("active");
@@ -236,4 +247,4 @@ const Product = props => {
   );
 };
 
-export default Product;
+export default withRouter(Product);
