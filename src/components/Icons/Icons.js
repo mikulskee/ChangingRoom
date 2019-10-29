@@ -7,19 +7,51 @@ import {
   faHeart,
   faShoppingCart
 } from "@fortawesome/free-solid-svg-icons";
-
-import { Link } from "react-router-dom";
-
+import { Link, withRouter } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
+import { SearchContext } from "../../contexts/SearchContext";
+import { TweenMax } from "gsap/TweenMax";
+import { ShopContext } from "../../contexts/ShopContext";
+import { SearchInputContext } from "../../contexts/SearchInputContext";
 
 const Wrapper = styled.div`
+  position: relative;
+  display: flex;
   font-size: 16px;
   margin-right: 16px;
+  width: 360px;
+  justify-content: flex-end;
+  overflow: hidden;
+  z-index: 1;
+  div.search {
+    position: relative;
+    display: flex;
+    button {
+      cursor: pointer;
 
+      svg {
+        pointer-events: none;
+      }
+    }
+    input {
+      position: absolute;
+      top: 50%;
+      transform: translateY(100%);
+      width: 214px;
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
   button {
     background: none;
     border: none;
     padding: 5px 8px;
+    &:focus {
+      outline: none;
+    }
     @media only screen and (min-width: 768px) {
       font-size: 16px;
       padding: 5px 10px;
@@ -44,17 +76,101 @@ const Wrapper = styled.div`
   }
 `;
 
-const Icons = () => {
+const Icons = props => {
+  const { shopItems } = useContext(ShopContext);
   const { cartItems } = useContext(CartContext);
+  const { inputValue, setInputValue } = useContext(SearchInputContext);
+  const { addSearchItem, setSearchedWord } = useContext(SearchContext);
+
+  const handleSearch = _ => {
+    const divSearch = document.querySelector("div.search");
+    const buttonUser = document.querySelector("button.user");
+    const inputSearch = document.querySelector("input.search");
+    divSearch.classList.toggle("active");
+
+    if (divSearch.classList.contains("active")) {
+      new TweenMax(divSearch, 0.15, {
+        css: { transform: "translateX(-214px)" }
+      });
+      new TweenMax(buttonUser, 0.15, {
+        css: { transform: "translateX(-214px)" }
+      });
+      new TweenMax(inputSearch, 0.15, {
+        css: { transform: "translateY(-50%)" },
+        delay: 0.15
+      });
+    } else if (!divSearch.classList.contains("active")) {
+      new TweenMax(inputSearch, 0.15, {
+        css: { transform: "translateY(100%)" }
+      });
+      new TweenMax(
+        divSearch,
+        0.15,
+        {
+          css: { transform: "translateX(0)" },
+          delay: 0.15
+        },
+        "+=0.15"
+      );
+      new TweenMax(buttonUser, 0.15, {
+        css: { transform: "translateX(0)" },
+        delay: 0.15
+      });
+    }
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setSearchedWord(inputValue);
+    const descriptions = shopItems
+      .filter(item => item.products)
+      .map(item => item.products);
+
+    const merged = [].concat
+      .apply([], descriptions)
+      .map(item => item.description.toLowerCase());
+
+    const results = merged.filter(
+      item => item.indexOf(inputValue.toLowerCase()) > -1
+    );
+
+    let toDispatch = [];
+    for (let i = 0; i < results.length; i++) {
+      const descriptions = shopItems
+        .filter(item => item.products)
+        .map(item => item.products);
+
+      const merged = [].concat.apply([], descriptions);
+      const searchedItem = merged.filter(
+        item => item.description.toLowerCase() === results[i]
+      )[0];
+
+      toDispatch.push(searchedItem);
+    }
+    addSearchItem(toDispatch);
+    props.history.push("/search");
+  };
 
   return (
-    <Wrapper>
+    <Wrapper className="icons">
       <button className="user">
         <FontAwesomeIcon icon={faUser} />
       </button>
-      <button className="search">
-        <FontAwesomeIcon icon={faSearch} />
-      </button>
+
+      <div className="search">
+        <button className="search" onClick={handleSearch}>
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
+        <form onSubmit={handleSubmit}>
+          <input
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
+            type="text"
+            className="search"
+            placeholder="Czego szukasz? (koszula, spodnie)"
+          />
+        </form>
+      </div>
 
       <button className="heart">
         {" "}
@@ -69,4 +185,4 @@ const Icons = () => {
   );
 };
 
-export default Icons;
+export default withRouter(Icons);

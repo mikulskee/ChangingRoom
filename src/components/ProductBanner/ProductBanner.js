@@ -48,7 +48,7 @@ const ProductBanner = props => {
   const bgBanner = shopItems.filter(
     section => section.section === props.match.params.section_id
   )[0].mainImg;
-  console.log(bgBanner);
+
   const title = shopItems.filter(
     section => section.section === props.match.params.section_id
   )[0].sectionPL;
