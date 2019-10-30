@@ -10,10 +10,13 @@ const Container = styled.section`
   background-image: url(${contactImage});
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 30px 0;
   .wrapper {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   ::after {
@@ -35,18 +38,30 @@ const Container = styled.section`
 
   h3 {
     color: white;
-    width: 80%;
+    width: 100%;
     font-family: "Source Sans Pro", sans-serif;
-    padding: 40px 0 60px;
+    padding: 40px 0 30px;
     text-align: center;
     margin: 0 auto;
+    font-size: 16px;
     @media only screen and (min-width: 768px) {
       font-size: 32px;
+    }
+    &.small {
+      padding: 20px 0 20px;
+      font-size: 14px;
+      ::after {
+        width: 40%;
+      }
+
+      @media only screen and (min-width: 768px) {
+        font-size: 24px;
+      }
     }
     ::after {
       content: "";
       display: block;
-      width: 80%;
+      width: 60%;
       height: 2px;
       background-color: #fff;
       position: relative;
@@ -58,8 +73,9 @@ const Container = styled.section`
 `;
 const GoogleMaps = styled.div`
   margin: 0 auto;
-  width: 80vw;
-  height: 80vw;
+  width: 80%;
+  height: 60%;
+  max-width: 840px;
   @media only screen and (min-width: 1024px) {
     width: 50vw;
     height: 20vw;
@@ -70,8 +86,12 @@ const GoogleMaps = styled.div`
   }
 `;
 const ContactInfo = styled.div`
-  width: 80vw;
+  width: 50%;
   margin: 0 auto;
+  max-width: 230px;
+  @media only screen and (orientation: landscape) {
+    width: 26%;
+  }
   a {
     padding: 40px 0 30px 30px;
     font-family: "Source Sans Pro", sans-serif;
@@ -97,6 +117,14 @@ const ContactInfo = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  width: 100%;
+
+  @media only screen and (orientation: landscape) {
+    width: 60%;
+  }
+`;
+
 class Contact extends Component {
   componentDidMount() {
     const googleMaps = document.querySelector(".google-maps");
@@ -106,16 +134,19 @@ class Contact extends Component {
     return (
       <Container>
         <div className="wrapper">
-          <h3>
-            C.H. Załęże ul. Bocheńskiego 69 <br /> Lokal nr 55
-          </h3>
-          <GoogleMaps className="google-maps" />
+          <h3>Zapraszamy do naszego sklepu stacjonarnego</h3>
           <ContactInfo>
             <a href="tel:+48664242650">
               <FontAwesomeIcon icon={faPhone} />
               +48 664-242-650
             </a>
           </ContactInfo>
+          <Wrapper>
+            <h3 className="small">
+              C.H. Załęże ul. Bocheńskiego 69 <br /> Lokal nr 55
+            </h3>
+            <GoogleMaps className="google-maps" />
+          </Wrapper>
         </div>
       </Container>
     );

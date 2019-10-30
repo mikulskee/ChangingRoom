@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   svg {
     height: 100%;
     width: 100%;
+    overflow: visible;
     .path {
       stroke-dasharray: ${({ pathLength }) => (pathLength ? pathLength : null)};
       will-change: stroke-dashoffset;
