@@ -1,16 +1,10 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faSearch,
-  faHeart,
-  faShoppingCart
-} from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link, withRouter } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContext";
 import { SearchContext } from "../../contexts/SearchContext";
-
 import { ShopContext } from "../../contexts/ShopContext";
 import { SearchInputContext } from "../../contexts/SearchInputContext";
 import { openInput, closeInput } from "../../animations/InputAnimations";
@@ -128,10 +122,6 @@ const Icons = props => {
 
   return (
     <Wrapper className="icons">
-      <button className="user">
-        <FontAwesomeIcon icon={faUser} />
-      </button>
-
       <div className="search">
         <button className="search" onClick={handleSearch}>
           <FontAwesomeIcon icon={faSearch} />
@@ -146,15 +136,9 @@ const Icons = props => {
           />
         </form>
       </div>
-
-      <button className="heart">
-        {" "}
-        <FontAwesomeIcon icon={faHeart} />
-      </button>
-
       <Link to="/cart" className="cart">
         <FontAwesomeIcon icon={faShoppingCart} />{" "}
-        <span>({cartItems.length})</span>
+        <span>({cartItems.length > 0 ? cartItems.length : 0})</span>
       </Link>
     </Wrapper>
   );

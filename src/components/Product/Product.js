@@ -1,11 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCartPlus,
-  faSearchPlus,
-  faHeart
-} from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus, faSearchPlus } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { ShopContext } from "../../contexts/ShopContext";
 import { CartContext } from "../../contexts/CartContext";
@@ -13,16 +9,19 @@ import { withRouter } from "react-router-dom";
 import { SearchContext } from "../../contexts/SearchContext";
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
   width: 40%;
   height: 300px;
   overflow: hidden;
   margin-bottom: 20px;
+  flex-wrap: wrap;
   @media only screen and (orientation: landscape) {
     width: 26%;
     margin: 0 30px 30px;
   }
   @media only screen and (min-width: 768px) {
-    width: 21%;
+    width: 29%;
     height: 370px;
   }
   @media only screen and (min-width: 1366px) {
@@ -30,7 +29,7 @@ const Wrapper = styled.div`
   }
   .cover {
     position: relative;
-    height: 70%;
+    height: 80%;
     width: 100%;
     display: flex;
     background-image: url(${({ bg }) => (bg ? bg : null)});
@@ -76,66 +75,59 @@ const Wrapper = styled.div`
       transition: opacity 0.15s linear;
     }
   }
-  .description {
-    margin-top: 10px;
-    margin-left: 5px;
-    font-weight: 800;
-    font-style: italic;
-    font-size: 8px;
-    text-align: left;
-    @media only screen and (min-width: 1024px) {
-      font-size: 12px;
+  .details {
+    width: 80%;
+    .description {
+      margin-top: 10px;
+      margin-left: 5px;
+      font-weight: 800;
+      font-style: italic;
+      font-size: 8px;
+      text-align: left;
+      @media only screen and (min-width: 1024px) {
+        font-size: 12px;
+      }
+    }
+    .price {
+      font-weight: 800;
+      margin-left: 5px;
+      text-align: left;
+      @media only screen and (min-width: 1024px) {
+        font-size: 18px;
+      }
     }
   }
-  .price {
-    font-weight: 800;
-    margin-left: 5px;
-    text-align: left;
-    @media only screen and (min-width: 1024px) {
-      font-size: 18px;
-    }
-  }
+
   .buttons {
-    margin-top: 10px;
+    width: 20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     button {
-      background-color: #171717;
-      color: white;
+      color: #171717;
       font-size: 16px;
       border: none;
-      padding: 5px 10px;
-      margin: 0 5px;
+      padding: 10px 15px;
       cursor: pointer;
+      background: none;
       transition: background-color 0.1s linear, color 0.1s linear;
+
       svg {
         pointer-events: none;
       }
-      &.disabled,
-      &.disabled:hover {
+      &.disabled {
         opacity: 0.2;
         pointer-events: none;
-        background-color: #171717;
-        color: white;
+        color: black;
       }
       &:focus {
         outline: none;
-      }
-      &.active,
-      &.fav.active:hover {
-        color: #ee5858;
-        background-color: #fff;
-      }
-      &.add:hover,
-      &.fav:hover {
-        background-color: #aaa;
-        color: #171717;
       }
     }
   }
 
   .full-size {
     position: fixed;
+    display: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -148,6 +140,7 @@ const Wrapper = styled.div`
 
     &.active {
       z-index: 9999;
+      display: block;
       ::before {
         opacity: 0.45;
         filter: blur(2px);
@@ -195,9 +188,6 @@ const Product = props => {
   const { addProductToCart } = useContext(CartContext);
   const { searchedItems } = useContext(SearchContext);
 
-  const handleFav = e => {
-    e.target.classList.toggle("active");
-  };
   const handleAdd = e => {
     e.target.classList.add("disabled");
     const keyID = e.target.parentNode.parentNode.querySelector(".description")
@@ -233,14 +223,14 @@ const Product = props => {
       <div className="cover" onClick={showProduct}>
         <FontAwesomeIcon icon={faSearchPlus} />
       </div>
-      <p className="description">{props.description}</p>
-      <p className="price">{props.price} zł</p>
+      <div className="details">
+        {" "}
+        <p className="description">{props.description}</p>
+        <p className="price">{props.price} zł</p>
+      </div>
       <div className="buttons">
         <button className="add" onClick={handleAdd}>
           <FontAwesomeIcon icon={faCartPlus} />
-        </button>
-        <button className="fav" onClick={handleFav}>
-          <FontAwesomeIcon icon={faHeart} />
         </button>
       </div>
     </Wrapper>
