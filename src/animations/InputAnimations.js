@@ -2,8 +2,9 @@ import { TweenMax } from "gsap/TweenMax";
 
 export const closeInput = _ => {
   const divSearch = document.querySelector("div.search");
+  const nav = document.querySelector("nav");
   const inputSearch = document.querySelector("input.search");
-  divSearch.classList.remove("active");
+  nav.classList.remove("active");
 
   new TweenMax(inputSearch, 0.15, {
     css: { transform: "translateY(100%)" }

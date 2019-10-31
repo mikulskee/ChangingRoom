@@ -4,6 +4,8 @@ import logo from "../../images/logo-main.png";
 import { Link } from "react-router-dom";
 
 const Container = styled(Link)`
+  position: relative;
+  z-index: 1;
   height: 8vw;
   @media only screen and (orientation: landscape) {
     height: 5vw;

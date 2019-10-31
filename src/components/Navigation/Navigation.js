@@ -6,6 +6,7 @@ import Logo from "../Logo/Logo";
 import DesktopNavigation from "../DesktopNavigation/DesktopNavigation";
 
 const Wrapper = styled.nav`
+  position: relative;
   width: 100%;
   padding: 10px;
   display: flex;
@@ -14,6 +15,17 @@ const Wrapper = styled.nav`
   justify-content: space-between;
   z-index: 3;
   background-color: #fff;
+  &.active {
+    @media only screen and (orientation: portrait) and (max-width: 560px) {
+      justify-content: flex-start;
+      div.icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 10px;
+      }
+    }
+  }
   @media only screen and (min-width: 1024px) {
     flex-direction: row;
     flex-wrap: wrap;

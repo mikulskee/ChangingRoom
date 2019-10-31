@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +10,7 @@ import { SearchInputContext } from "../../contexts/SearchInputContext";
 import { openInput, closeInput } from "../../animations/InputAnimations";
 
 const Wrapper = styled.div`
+  background-color: white;
   position: relative;
   display: flex;
   font-size: 16px;
@@ -17,13 +18,13 @@ const Wrapper = styled.div`
   width: 360px;
   justify-content: flex-end;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
+
   div.search {
     position: relative;
     display: flex;
     button {
       cursor: pointer;
-
       svg {
         pointer-events: none;
       }
@@ -57,6 +58,8 @@ const Wrapper = styled.div`
     text-decoration: none;
     color: #000;
     padding: 5px 8px;
+    display: flex;
+    align-items: center;
     @media only screen and (min-width: 768px) {
       font-size: 16px;
       padding: 5px 10px;
@@ -78,12 +81,14 @@ const Icons = props => {
   const { addSearchItem, setSearchedWord } = useContext(SearchContext);
 
   const handleSearch = _ => {
-    const divSearch = document.querySelector("div.search");
-    divSearch.classList.toggle("active");
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("active");
+    const currentLocation = props.location.pathname;
 
-    if (divSearch.classList.contains("active")) {
+    console.log(currentLocation);
+    if (nav.classList.contains("active")) {
       openInput();
-    } else if (!divSearch.classList.contains("active")) {
+    } else if (!nav.classList.contains("active")) {
       closeInput();
     }
   };
@@ -119,7 +124,9 @@ const Icons = props => {
     addSearchItem(toDispatch);
     props.history.push("/search");
   };
-
+  useEffect(() => {
+    closeInput();
+  }, [props.location.pathname]);
   return (
     <Wrapper className="icons">
       <div className="search">
