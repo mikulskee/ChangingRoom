@@ -1,31 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../images/logo-main.png";
+import logoWhite from "../../images/logo-main-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faFacebookSquare
 } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import logoUE from "../../images/logo-ue.png";
+import logoFE from "../../images/logo-fe.png";
+import logoSilesia from "../../images/logo-silesia.png";
 
 const Container = styled.footer`
   padding: 20px 0 5px;
   width: 100%;
 
   background-color: #000;
-  img {
+  img.logo-footer {
     display: block;
     width: 60%;
     max-width: 340px;
     margin: 0 auto;
     @media only screen and (orientation: landscape) {
-      width: 35%;
+      width: 30%;
     }
     @media only screen and (min-width: 768px) {
-      width: 40%;
+      width: 35%;
     }
     @media only screen and (min-width: 1024px) {
-      width: 25%;
+      width: 20%;
     }
   }
 
@@ -42,7 +45,26 @@ const Container = styled.footer`
       }
     }
   }
+  div.funds {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto 20px;
+    align-items: center;
+    justify-content: center;
+    @media only screen and (orientation: portrait) {
+      flex-direction: column;
+    }
 
+    img {
+      padding: 0 20px;
+      display: block;
+      height: 45px;
+      @media only screen and (min-width: 1024px) {
+        height: 55px;
+      }
+    }
+  }
   p {
     color: white;
     font-family: "Source Sans Pro", sans-serif;
@@ -66,7 +88,11 @@ const Container = styled.footer`
 const Footer = () => {
   return (
     <Container>
-      <img src={logo} alt="białe logo przebieralnia" />
+      <img
+        src={logoWhite}
+        alt="białe logo przebieralnia"
+        className="logo-footer"
+      />
       <div className="socials">
         <a href="/">
           <FontAwesomeIcon icon={faInstagram} />
@@ -74,6 +100,11 @@ const Footer = () => {
         <a href="/">
           <FontAwesomeIcon icon={faFacebookSquare} />
         </a>
+      </div>
+      <div className="funds">
+        <img src={logoUE} alt="" className="ue" />
+        <img src={logoFE} alt="" className="ue" />
+        <img src={logoSilesia} alt="" className="ue" />
       </div>
       <p>
         © 2019 coded with <FontAwesomeIcon icon={faHeart} /> by{" "}

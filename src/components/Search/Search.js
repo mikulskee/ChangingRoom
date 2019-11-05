@@ -5,6 +5,7 @@ import { SearchContext } from "../../contexts/SearchContext";
 import { SearchInputContext } from "../../contexts/SearchInputContext";
 import { closeInput } from "../../animations/InputAnimations";
 import Product from "../Product/Product";
+import Footer from "../Footer/Footer";
 
 const Wrapper = styled.section`
   padding-top: 10px;
@@ -13,11 +14,11 @@ const Wrapper = styled.section`
 
 const Container = styled.div`
   width: 80%;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 auto;
-  align-items: center;
   justify-content: space-around;
 `;
 const Desccription = styled.p`
@@ -70,6 +71,7 @@ const Search = props => {
       )}
 
       <Container>{newProducts}</Container>
+      <Footer />
     </Wrapper>
   );
 };
