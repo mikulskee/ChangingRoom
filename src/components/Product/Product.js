@@ -192,7 +192,7 @@ const Wrapper = styled.div`
 `;
 
 const Product = props => {
-  const { shopItems } = useContext(ShopContext);
+  const { shopItems, setItemSelected } = useContext(ShopContext);
   const { addProductToCart } = useContext(CartContext);
   const { searchedItems } = useContext(SearchContext);
 
@@ -206,13 +206,15 @@ const Product = props => {
       const addedProduct = searchedItems.filter(
         item => item.description === keyID
       )[0];
-      addedProduct["selected"] = true;
+
+      setItemSelected(addedProduct);
       addProductToCart(addedProduct);
     } else {
       const addedProduct = shopItems
         .filter(item => item.section === sectionID)[0]
         .products.filter(item => item.description === keyID)[0];
-      addedProduct["selected"] = true;
+
+      setItemSelected(addedProduct);
       addProductToCart(addedProduct);
     }
   };

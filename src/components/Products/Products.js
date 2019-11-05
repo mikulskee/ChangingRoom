@@ -34,7 +34,6 @@ const Container = styled.div`
 
 const Products = props => {
   const { shopItems } = useContext(ShopContext);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   });
