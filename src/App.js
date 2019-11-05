@@ -15,8 +15,8 @@ class App extends Component {
   state = {};
   render() {
     return (
-      <CartContextProvider>
-        <ShopContextProvider>
+      <ShopContextProvider>
+        <CartContextProvider>
           <SearchContextProvider>
             <SearchInputContextProvider>
               <BrowserRouter>
@@ -35,8 +35,8 @@ class App extends Component {
               </BrowserRouter>
             </SearchInputContextProvider>
           </SearchContextProvider>
-        </ShopContextProvider>
-      </CartContextProvider>
+        </CartContextProvider>
+      </ShopContextProvider>
     );
   }
 }
