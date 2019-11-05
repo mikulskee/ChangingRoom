@@ -83,9 +83,6 @@ const Icons = props => {
   const handleSearch = _ => {
     const nav = document.querySelector("nav");
     nav.classList.toggle("active");
-    const currentLocation = props.location.pathname;
-
-    console.log(currentLocation);
     if (nav.classList.contains("active")) {
       openInput();
     } else if (!nav.classList.contains("active")) {
@@ -121,8 +118,11 @@ const Icons = props => {
 
       toDispatch.push(searchedItem);
     }
+
     addSearchItem(toDispatch);
     props.history.push("/search");
+    setInputValue("");
+    closeInput();
   };
   useEffect(() => {
     closeInput();

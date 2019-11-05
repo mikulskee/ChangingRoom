@@ -47,6 +47,7 @@ const Products = props => {
         bg={product.img}
         description={product.description}
         price={product.price}
+        selected={product.selected}
       />
     ));
 

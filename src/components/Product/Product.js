@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faSearchPlus } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
@@ -111,6 +111,14 @@ const Wrapper = styled.div`
       background: none;
       transition: background-color 0.1s linear, color 0.1s linear;
 
+      ${({ selected }) =>
+        selected &&
+        css`
+          opacity: 0.2;
+          pointer-events: none;
+          color: black;
+        `}
+
       svg {
         pointer-events: none;
       }
@@ -203,6 +211,7 @@ const Product = props => {
       const addedProduct = shopItems
         .filter(item => item.section === sectionID)[0]
         .products.filter(item => item.description === keyID)[0];
+      addedProduct["selected"] = true;
       addProductToCart(addedProduct);
     }
   };
@@ -215,7 +224,7 @@ const Product = props => {
   };
 
   return (
-    <Wrapper bg={props.bg}>
+    <Wrapper bg={props.bg} selected={props.selected}>
       <div className="full-size">
         <img src={props.bg} alt="zdjęcie produktu" />
         <FontAwesomeIcon icon={faTimesCircle} onClick={hideProduct} />
@@ -229,7 +238,7 @@ const Product = props => {
         <p className="price">{props.price} zł</p>
       </div>
       <div className="buttons">
-        <button className="add" onClick={handleAdd}>
+        <button className="add" selected={props.selected} onClick={handleAdd}>
           <FontAwesomeIcon icon={faCartPlus} />
         </button>
       </div>

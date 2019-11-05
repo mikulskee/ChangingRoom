@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { SearchContext } from "../../contexts/SearchContext";
 import { SearchInputContext } from "../../contexts/SearchInputContext";
 import { closeInput } from "../../animations/InputAnimations";
@@ -51,9 +51,12 @@ const Search = props => {
       bg={product.img}
       description={product.description}
       price={product.price}
+      selected={product.selected}
     />
   ));
-
+  if (searchedItems.length === 0) {
+    return <Redirect to="/" />;
+  }
   return (
     <Wrapper>
       {searchedItems.length === 0 ? (
