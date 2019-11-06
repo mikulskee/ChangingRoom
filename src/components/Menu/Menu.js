@@ -62,6 +62,7 @@ const Logo = styled.div`
 
 const UL = styled.ul`
   padding-left: 10px;
+  list-style: none;
   a {
     margin: 10px 0;
     padding: 10px 0;
