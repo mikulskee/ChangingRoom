@@ -19,7 +19,7 @@ const Container = styled.footer`
   img.logo-footer {
     display: block;
     width: 60%;
-    max-width: 340px;
+    max-width: 248px;
     margin: 0 auto;
     @media only screen and (orientation: landscape) {
       width: 30%;

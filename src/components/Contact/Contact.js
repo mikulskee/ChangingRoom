@@ -10,7 +10,7 @@ const Container = styled.section`
   background-image: url(${contactImage});
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: center;
   padding: 30px 0;
   .wrapper {
     position: relative;
