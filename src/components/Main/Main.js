@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
-import additives from "../../images/additives.jpg";
 import hoodies from "../../images/hoodies.jpg";
 import jackets from "../../images/jackets.jpg";
 import pants from "../../images/pants.jpg";
@@ -96,31 +95,27 @@ const sections = [
   { product: "Bluzy", image: hoodies, id: "hoodies" },
   { product: "Sukienki & Spódnice", image: skirts, id: "skirts" },
   { product: "Kurtki & Marynarki", image: jackets, id: "jackets" },
-  { product: "Torebki", image: bags, id: "bags" },
-  { product: "Dodatki", image: additives, id: "additives" }
+  { product: "Torebki", image: bags, id: "bags" }
 ];
 
-class Main extends Component {
-  state = {};
-  render() {
-    const products = sections.map(section => (
-      <Link
-        to={`/products/${section.id}`}
-        key={section.id}
-        className={`product ${section.id}`}
-      >
-        <img alt={section.product} src={section.image} />
-        <h1>{section.product}</h1>
-      </Link>
-    ));
+const Main = () => {
+  const products = sections.map(section => (
+    <Link
+      to={`/products/${section.id}`}
+      key={section.id}
+      className={`product ${section.id}`}
+    >
+      <img alt={section.product} src={section.image} />
+      <h1>{section.product}</h1>
+    </Link>
+  ));
 
-    return (
-      <Container>
-        <Line />
-        {products}
-      </Container>
-    );
-  }
-}
+  return (
+    <Container>
+      <Line />
+      {products}
+    </Container>
+  );
+};
 
 export default Main;

@@ -1,11 +1,12 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import Product from "../Product/Product";
-
 import Footer from "../Footer/Footer";
 import { ProductsWrapper } from "../ProductsWrapper/ProductsWrapper";
 import { ShopContext } from "../../contexts/ShopContext";
 import ProductBanner from "../ProductBanner/ProductBanner";
+
+import { withRouter } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const Container = styled.div`
     width: 70%;
     margin-right: 20px;
     padding-left: 23%;
-    padding-top: 100px;
+    padding-top: 40px;
   }
   @media only screen and (min-width: 1300px) {
     margin: 0 auto;
@@ -34,9 +35,10 @@ const Container = styled.div`
 
 const Products = props => {
   const { shopItems } = useContext(ShopContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, []);
 
   const newProducts = shopItems
     .filter(i => i.section === props.match.params.section_id)[0]
@@ -51,11 +53,13 @@ const Products = props => {
     ));
 
   return (
-    <ProductsWrapper>
-      <ProductBanner />
-      <Container>{newProducts}</Container>
-      <Footer />
-    </ProductsWrapper>
+    <>
+      <ProductsWrapper>
+        <ProductBanner />
+        <Container>{newProducts}</Container>
+        <Footer />
+      </ProductsWrapper>
+    </>
   );
 };
-export default Products;
+export default withRouter(Products);

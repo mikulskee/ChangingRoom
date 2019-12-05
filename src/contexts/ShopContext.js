@@ -6,7 +6,6 @@ import mainHoodie from "../images/hoodies.jpg";
 import mainSkirt from "../images/skirts.jpg";
 import mainJacket from "../images/jackets.jpg";
 import mainBag from "../images/bags.jpg";
-import mainAdditives from "../images/additives.jpg";
 import tshirt1 from "../images/products/t-shirts/1.jpg";
 import tshirt2 from "../images/products/t-shirts/2.jpg";
 import tshirt3 from "../images/products/t-shirts/3.jpg";
@@ -42,11 +41,6 @@ import bags2 from "../images/products/bags/2.jpg";
 import bags3 from "../images/products/bags/3.jpg";
 import bags4 from "../images/products/bags/4.jpg";
 import bags5 from "../images/products/bags/5.jpg";
-import additives1 from "../images/products/additives/1.jpg";
-import additives2 from "../images/products/additives/2.jpg";
-import additives3 from "../images/products/additives/3.jpg";
-import additives4 from "../images/products/additives/4.jpg";
-import additives5 from "../images/products/additives/5.jpg";
 
 export const ShopContext = createContext();
 
@@ -67,31 +61,31 @@ const ShopContextProvider = props => {
             link: "/products/tshirts",
             products: [
               {
-                description: "Czerwony t-shirt z orłem",
+                description: "Morski t-shirt basic",
                 img: tshirt1,
                 price: 69,
                 selected: false
               },
               {
-                description: "Zółty t-shirt z orłem",
+                description: "Biały t-shirt basic",
                 img: tshirt2,
                 price: 59,
                 selected: false
               },
               {
-                description: "Łososiowy t-shirt z orłem",
+                description: "Czerwony t-shirt basic",
                 img: tshirt3,
                 price: 59,
                 selected: false
               },
               {
-                description: "Biały t-shirt z orłem",
+                description: "Różowy t-shirt basic",
                 img: tshirt4,
                 price: 59,
                 selected: false
               },
               {
-                description: "Czarny t-shirt z orłem",
+                description: "Żółty t-shirt z orłem",
                 img: tshirt5,
                 price: 59,
                 selected: false
@@ -105,32 +99,32 @@ const ShopContextProvider = props => {
             link: "/products/shirts",
             products: [
               {
-                description: "Biała bluzka z ornamentem",
+                description: "Biała bluzka kaktus",
                 img: shirts1,
                 price: 79,
                 selected: false
               },
               {
-                description: "Granatowa bluzka z kwiecistym wzorem",
+                description: "Kraciasta koszula autumn",
                 img: shirts2,
                 price: 79,
                 selected: false
               },
               {
-                description: "Biała bluzka z kwiecistym wzorem",
+                description: "Biała koszula w paski",
                 img: shirts3,
                 price: 79,
                 selected: false
               },
               {
-                description: "Biała koszula ze wzorem",
+                description: "Bordowa bluzka z wiązaniem",
                 img: shirts4,
                 price: 79,
                 selected: false
               },
 
               {
-                description: "Koszula z kwiecistym wzorem",
+                description: "Biała bluzka oversize",
                 img: shirts5,
                 price: 79,
                 selected: false
@@ -144,13 +138,13 @@ const ShopContextProvider = props => {
             link: "/products/pants",
             products: [
               {
-                description: "Kraciaste spodnie",
+                description: "Spodnie khaki",
                 img: pants1,
                 price: 99,
                 selected: false
               },
               {
-                description: "Spodnie moro",
+                description: "Spodnie w prążki",
                 img: pants2,
                 price: 99,
                 selected: false
@@ -168,7 +162,7 @@ const ShopContextProvider = props => {
                 selected: false
               },
               {
-                description: "Czarne spodnie",
+                description: "Łososiowe spodnie jeansowe",
                 img: pants5,
                 price: 99,
                 selected: false
@@ -182,31 +176,31 @@ const ShopContextProvider = props => {
             link: "/products/hoodies",
             products: [
               {
-                description: "Szara bluza z misiem Stacy",
+                description: "Różowa bluza basic",
                 img: hoodies1,
                 price: 89,
                 selected: false
               },
               {
-                description: "Czarna bluza z królikiem",
+                description: "Szara bluza ze wzorem",
                 img: hoodies2,
                 price: 89,
                 selected: false
               },
               {
-                description: "Szara bluza z misiem Joy",
+                description: "Czarna bluza Space",
                 img: hoodies3,
                 price: 89,
                 selected: false
               },
               {
-                description: "Biała bluza z misiem",
+                description: "Czarna bluza Space Babe",
                 img: hoodies4,
                 price: 89,
                 selected: false
               },
               {
-                description: "Kremowa bluza z kołnierzem",
+                description: "Zielona bluza Forest",
                 img: hoodies5,
                 price: 99,
                 selected: false
@@ -220,13 +214,13 @@ const ShopContextProvider = props => {
             link: "/products/skirts",
             products: [
               {
-                description: "Szara sukienka z kokardą",
+                description: "Kwiaciasta sukienka Flower",
                 img: skirts1,
                 price: 99,
                 selected: false
               },
               {
-                description: "Szara sukienka z koronką",
+                description: "Spódnicza mini w cekiny",
                 img: skirts2,
                 price: 99,
                 selected: false
@@ -238,13 +232,13 @@ const ShopContextProvider = props => {
                 selected: false
               },
               {
-                description: "Biało szara sukienka",
+                description: "Czarna wieczorowa sukienka",
                 img: skirts4,
                 price: 99,
                 selected: false
               },
               {
-                description: "Sukienka z biało czarnym wzorem",
+                description: "Sukienka w panterkę",
                 img: skirts5,
                 price: 99,
                 selected: false
@@ -258,31 +252,31 @@ const ShopContextProvider = props => {
             link: "/products/jackets",
             products: [
               {
-                description: "Klasyczny granatowy żakiet",
+                description: "Kurtka bomber basic",
                 img: jackets1,
                 price: 199,
                 selected: false
               },
               {
-                description: "Kremowy płaszcz z czarnym dodatkiem",
+                description: "Katana jeansowa",
                 img: jackets2,
                 price: 199,
                 selected: false
               },
               {
-                description: "Klasyczna czarna ramoneska",
+                description: "Granatowa kurtka puchowa",
                 img: jackets3,
                 price: 199,
                 selected: false
               },
               {
-                description: "Parka khaki",
+                description: "Granatowy żakiet",
                 img: jackets4,
                 price: 199,
                 selected: false
               },
               {
-                description: "Kraciasty płaszcz z kapturem",
+                description: "Kraciasty żakiet",
                 img: jackets5,
                 price: 99,
                 selected: false
@@ -296,75 +290,37 @@ const ShopContextProvider = props => {
             link: "/products/bags",
             products: [
               {
-                description: "Biała torebka",
+                description: "Czarna torebka Flow",
                 img: bags1,
                 price: 129,
                 selected: false
               },
               {
-                description: "Niebieska torebka",
+                description: "Szara torebka Grey",
                 img: bags2,
                 price: 129,
                 selected: false
               },
               {
-                description: "Czarna/Biała aktówka",
+                description: "Biała torebka True Gold",
                 img: bags3,
                 price: 129,
                 selected: false
               },
               {
-                description: "Czarna skórzana aktówka",
+                description: "Torebka w kwiecisty wzór",
                 img: bags4,
                 price: 129,
                 selected: false
               },
               {
-                description: "Biało czarna torebka",
+                description: "Torebka Mosaic",
                 img: bags5,
                 price: 129,
                 selected: false
               }
             ],
             mainImg: mainBag
-          },
-          {
-            sectionPL: "Dodatki",
-            section: "additives",
-            link: "/products/additives",
-            products: [
-              {
-                description: "Łososiowa apaszka w serca",
-                img: additives1,
-                price: 49,
-                selected: false
-              },
-              {
-                description: "Biała czapka z szarym pomponem",
-                img: additives2,
-                price: 59,
-                selected: false
-              },
-              {
-                description: "Srebrny naszyjnik",
-                img: additives3,
-                price: 99,
-                selected: false
-              },
-              {
-                description: "Kolczyki & Naszyjnik Listki",
-                img: additives4,
-                price: 99,
-                selected: false
-              },
-              {
-                description: "Złoty naszyjnik z kolczykami",
-                img: additives5,
-                price: 119,
-                selected: false
-              }
-            ],
-            mainImg: mainAdditives
           }
         ];
   });

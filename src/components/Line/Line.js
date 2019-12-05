@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   left: 50%;
   height: 100%;
   width: 100%;
-  transform: translate(-43%, -54.2%);
+  transform: translate(-43%, -47.8%);
   @media only screen and (min-width: 1024px) {
     display: block;
   }
@@ -35,7 +35,7 @@ const Line = () => {
 
     const handleScroll = () => {
       if (window.innerWidth >= 1024 && window.innerWidth < 1399) {
-        setStroke(pathLength - window.scrollY);
+        setStroke(pathLength - (window.scrollY - 165));
       } else if (window.innerWidth > 1400) {
         setStroke(pathLength - window.scrollY * 0.8);
       }
