@@ -20,13 +20,13 @@ const Template = styled.div`
   background-image: url(${header3});
   height: 64vw;
   max-height: 650px;
-  background-position: center;
+  background-position: center 25%;
   background-size: cover;
   @media only screen and (orientation: landscape) {
     height: 45vw;
   }
   @media only screen and (min-width: 1024px) {
-    height: 460px;
+    height: 400px;
   }
   @media only screen and (min-width: 1375px) {
     height: 650px;
@@ -46,7 +46,7 @@ const Template = styled.div`
       background-position: 0% 30%;
     }
     @media only screen and (min-width: 1024px) {
-      height: 460px;
+      height: 420px;
     }
     @media only screen and (min-width: 1375px) {
       height: 650px;

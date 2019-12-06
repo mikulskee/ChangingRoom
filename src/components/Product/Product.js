@@ -57,14 +57,16 @@ const Wrapper = styled.div`
       pointer-events: none;
       transition: opacity 0.15s linear;
     }
-    &:hover {
-      transform: scale(1.05);
-    }
-    &:hover::before {
-      opacity: 0.3;
-    }
-    &:hover svg {
-      opacity: 1;
+    @media only screen and (min-width: 1024px) {
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:hover::before {
+        opacity: 0.3;
+      }
+      &:hover svg {
+        opacity: 1;
+      }
     }
 
     svg {

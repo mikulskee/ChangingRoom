@@ -16,7 +16,7 @@ const Wrapper = styled.ul`
     display: flex;
   }
   li {
-    margin: 10px 15px;
+    margin: 10px 5px;
     a {
       position: relative;
       text-decoration: none;

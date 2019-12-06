@@ -2,23 +2,11 @@ import { TimelineMax as Timeline, Power1 } from "gsap";
 
 const getDefaultTimeline = (node, delay) => {
   const timeline = new Timeline({ paused: true });
-  const productWrapper = node.querySelector(".product-card-wrapper");
-  timeline
-    .from(node, 0.35, {
-      autoAlpha: 0,
-      ease: Power1.easeIn
-    })
-    .from(
-      productWrapper,
-      0.35,
-      {
-        autoAlpha: 0,
-        y: 10,
 
-        ease: Power1.easeOut
-      },
-      "-=0.35"
-    );
+  timeline.from(node, 0.35, {
+    autoAlpha: 0,
+    ease: Power1.easeIn
+  });
 
   return timeline;
 };
