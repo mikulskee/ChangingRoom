@@ -47,7 +47,7 @@ const Line = () => {
   });
 
   return (
-    <Wrapper pathLength={pathLength}>
+    <Wrapper pathLength={pathLength} className={"line"}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239.42 1024">
         <title>line</title>
         <g id="e6f1a36e-8168-4089-8278-e6b3c55f26a7" data-name="Warstwa 2">

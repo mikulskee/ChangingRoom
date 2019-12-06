@@ -116,6 +116,7 @@ const Menu = () => {
     TweenMax.to(menu, 0.25, { css: { transform: "translatex(-100%)" } });
     TweenMax.set(menu, { css: { display: "none" }, delay: 0.25 });
   };
+
   const list = sections.map(section => (
     <li key={section.id}>
       <Link

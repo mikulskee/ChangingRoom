@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
-import Product from "../Product/Product";
-import Footer from "../Footer/Footer";
-import { ProductsWrapper } from "../ProductsWrapper/ProductsWrapper";
+import Product from "../../components/Product/Product";
+import Footer from "../../components/Footer/Footer";
+import { ProductsWrapper } from "../../components/ProductsWrapper/ProductsWrapper";
 import { ShopContext } from "../../contexts/ShopContext";
-import ProductBanner from "../ProductBanner/ProductBanner";
+import ProductBanner from "../../components/ProductBanner/ProductBanner";
 
 import { withRouter } from "react-router-dom";
 
@@ -33,7 +33,7 @@ const Container = styled.div`
   }
 `;
 
-const Products = props => {
+const ProductsTemplate = props => {
   const { shopItems } = useContext(ShopContext);
 
   useEffect(() => {
@@ -56,10 +56,10 @@ const Products = props => {
     <>
       <ProductsWrapper>
         <ProductBanner />
-        <Container>{newProducts}</Container>
+        <Container className={"product-card-wrapper"}>{newProducts}</Container>
         <Footer />
       </ProductsWrapper>
     </>
   );
 };
-export default withRouter(Products);
+export default withRouter(ProductsTemplate);

@@ -15,6 +15,11 @@
       rel="stylesheet"
     />
     <title>e-przebieralnia.pl</title>
+    <script>
+      window.loadPromise = new Promise(function(resolve) {
+        window.addEventListener("load", resolve);
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>

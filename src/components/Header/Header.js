@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { TimelineMax } from "gsap/TimelineMax";
-import header1 from "../../images/header1.jpg";
-import header2 from "../../images/header2.jpg";
+// import { headerAnimation } from "../../animations/headerAnimation";
+
+// import header1 from "../../images/header1.jpg";
+// import header2 from "../../images/header2.jpg";
 import header3 from "../../images/header3.jpg";
 
 const Container = styled.header`
@@ -16,7 +17,7 @@ const Template = styled.div`
   top: 0;
   left: 0;
   will-change: transform;
-  background-image: url(${header1});
+  background-image: url(${header3});
   height: 64vw;
   max-height: 650px;
   background-position: center;
@@ -36,7 +37,6 @@ const Template = styled.div`
     height: 64vw;
     max-height: 650px;
     width: 100%;
-    background-image: url(${header2});
 
     @media only screen and (orientation: landscape) {
       height: 45vw;
@@ -102,38 +102,19 @@ const Template = styled.div`
 `;
 
 const headers = [
-  { id: "casual", title: "jesień 2019", span: "casual", image: header1 },
-  { id: "office", title: "jesień 2019", span: "office", image: header2 },
+  // { id: "office", title: "jesień 2019", span: "office", image: header2 },
   {
-    id: "motto",
+    id: "casual",
     title: "find your own style",
     span: "",
     image: header3
   }
+  // { id: "casual", title: "jesień 2019", span: "casual", image: header1 }
 ];
 
 const Header = () => {
   useEffect(() => {
-    const casual = document.querySelector(".template--casual");
-    const office = document.querySelector(".template--office");
-    const motto = document.querySelector(".template--motto");
-
-    const tlHeader = new TimelineMax();
-
-    tlHeader
-      .set(office, { xPercent: 100 })
-      .set(motto, { xPercent: 100 })
-      .set(casual, { xPercent: 0 })
-      .to(casual, 1, { xPercent: -100, delay: 5 })
-      .to(office, 1, { xPercent: 0, delay: -1 })
-      .to(office, 1, { xPercent: -100, delay: 5 })
-      .to(motto, 1, { xPercent: 0, delay: -1 })
-      .set(casual, { xPercent: 100 })
-      .set(office, { xPercent: 100 })
-      .to(motto, 1, { xPercent: -100, delay: 5 })
-      .to(casual, 1, { xPercent: 0, delay: -1 });
-
-    tlHeader.repeat(-1);
+    // headerAnimation();
   });
   const headersLayouts = headers.map(header => (
     <Template key={header.id} className={`template--${header.id}`}>
