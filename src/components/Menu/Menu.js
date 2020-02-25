@@ -4,7 +4,7 @@ import logo from "../../images/logo-main.png";
 import { TweenMax } from "gsap/TweenMax";
 import { Link } from "react-router-dom";
 
-const Wrap = styled.div`
+const Wrap = styled.nav`
   transform: translateX(-100%);
   width: 100%;
   position: fixed;
