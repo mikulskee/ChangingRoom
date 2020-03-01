@@ -2,10 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logoWhite from "../../images/logo-main-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faFacebookSquare
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import logoUE from "../../images/logo-ue.png";
 import logoFE from "../../images/logo-fe.png";
