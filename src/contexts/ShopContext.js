@@ -85,7 +85,7 @@ const ShopContextProvider = props => {
                 selected: false
               },
               {
-                description: "Żółty t-shirt z orłem",
+                description: "Żółty t-shirt basic",
                 img: tshirt5,
                 price: 59,
                 selected: false

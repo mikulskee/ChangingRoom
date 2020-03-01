@@ -94,10 +94,7 @@ const Footer = () => {
         className="logo-footer"
       />
       <div className="socials">
-        <a href="/">
-          <FontAwesomeIcon icon={faInstagram} />
-        </a>
-        <a href="/">
+        <a href="https://www.facebook.com/eprzebieralnia/">
           <FontAwesomeIcon icon={faFacebookSquare} />
         </a>
       </div>

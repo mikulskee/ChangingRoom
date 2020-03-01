@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import contactImage from "../../images/contact-image.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.section`
   width: 100%;
@@ -17,6 +17,7 @@ const Container = styled.section`
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
   }
 
   ::after {
@@ -88,10 +89,7 @@ const GoogleMaps = styled.div`
 const ContactInfo = styled.div`
   width: 50%;
   margin: 0 auto;
-  max-width: 230px;
-  @media only screen and (orientation: landscape) {
-    width: 26%;
-  }
+
   a {
     padding: 40px 0 30px 30px;
     font-family: "Source Sans Pro", sans-serif;
@@ -99,13 +97,13 @@ const ContactInfo = styled.div`
     color: white;
     text-decoration: none;
     font-size: 16px;
+    text-align: center;
     @media only screen and (min-width: 768px) {
       font-size: 22px;
     }
     ::after {
       content: "";
       display: block;
-      width: 90%;
       height: 2px;
       background-color: #fff;
       position: relative;
@@ -122,6 +120,7 @@ const Wrapper = styled.div`
 
   @media only screen and (orientation: landscape) {
     width: 60%;
+    margin: 0 auto;
   }
 `;
 
@@ -137,8 +136,10 @@ const Contact = () => {
         <h3>Zapraszamy do naszego sklepu stacjonarnego</h3>
         <ContactInfo>
           <a href="tel:+48664242650">
-            <FontAwesomeIcon icon={faPhone} />
-            +48 664-242-650
+            <FontAwesomeIcon icon={faPhone} /> +48 664-242-650
+          </a>
+          <a href="mailto:kontakt@e-przebieralnia.com">
+            <FontAwesomeIcon icon={faEnvelope} /> kontakt@e-przebieralnia.pl
           </a>
         </ContactInfo>
         <Wrapper>
