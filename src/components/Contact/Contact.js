@@ -110,7 +110,7 @@ const ContactInfo = styled.div`
     }
   }
   a:nth-child(2) {
-    padding: 0 0 40px 30px;
+    padding: 0 0 30px;
   }
 `;
 
