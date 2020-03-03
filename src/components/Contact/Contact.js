@@ -87,11 +87,10 @@ const GoogleMaps = styled.div`
   }
 `;
 const ContactInfo = styled.div`
-  width: 50%;
   margin: 0 auto;
 
   a {
-    padding: 40px 0 30px 30px;
+    padding: 40px 0 30px;
     font-family: "Source Sans Pro", sans-serif;
     display: block;
     color: white;
