@@ -226,7 +226,7 @@ const ShopContextProvider = props => {
                 selected: false
               },
               {
-                description: "Czarna sukienka z orientalnym wzorem",
+                description: "Sukienka khaki",
                 img: skirts3,
                 price: 99,
                 selected: false

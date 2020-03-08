@@ -3,9 +3,8 @@ import styled from "styled-components";
 import logoWhite from "../../images/logo-main-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import logoUE from "../../images/logo-ue.png";
-import logoFE from "../../images/logo-fe.png";
+import logoFE from "../../images/logo-fe.jpg";
 import logoSilesia from "../../images/logo-silesia.png";
 
 const Container = styled.footer`
@@ -101,8 +100,8 @@ const Footer = () => {
         <img src={logoSilesia} alt="" className="ue" />
       </div>
       <p>
-        © 2019 coded with <FontAwesomeIcon icon={faHeart} /> by{" "}
-        <a href="https://codeverse.pl">Codeverse.pl</a> . All rights reserved.
+        © 2019 Design {"&"} Developed by{" "}
+        <a href="https://codeverse.pl">Codeverse</a> . All rights reserved.
       </p>
     </Container>
   );

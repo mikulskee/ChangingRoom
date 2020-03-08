@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../images/logo-main.png";
+import logo from "../../images/logo-main.jpg";
 import { Link } from "react-router-dom";
 
 const Container = styled(Link)`
