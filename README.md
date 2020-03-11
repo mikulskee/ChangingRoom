@@ -1,6 +1,6 @@
 # e-przebieralnia.pl
 
-This project uses **React.js**, **React-Router** for navigation, **React-Router** for animate route changes, **styled-components** for layouts, and all animations were created in **GSAP** . Also I have used **Adobe Xd** and **Figma** for creating some layout elements.
+This project uses **React.js**, **React-Router** for navigation, **React-Transition-Group** for animate route changes, **styled-components** for layouts, and all animations were created in **GSAP** . Also I have used **Adobe Xd** and **Figma** for creating some layout elements.
 
 **Live demo**: _https://mikulskee.github.io/ChangingRoom/_
 
